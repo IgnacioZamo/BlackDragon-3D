@@ -1,0 +1,64 @@
+/* =========================================================
+   Variables de diseño de Black Dragon 3D
+   Tomadas de la lámina "Identidad visual" del diseño.
+   ========================================================= */
+
+:root {
+  /* Paleta */
+  --obsidiana: #0c1014;
+  --carbon: #1a2028;
+  --sangre: #5a0415;
+  --dragon: #a40725;
+  --brasa: #e0243f;
+  --humo: #dadde3;
+  --niebla: #eef0f3;
+  --blanco: #ffffff;
+
+  /* Textos sobre fondo claro y oscuro (contraste AA verificado) */
+  --texto: #12161c;
+  --texto-suave: #5b616b;
+  --texto-claro: #f4f2ee;
+  --texto-claro-suave: #a3a8b0;
+
+  /* Degradados del diseño */
+  --grad-fuego: linear-gradient(135deg, var(--brasa) 0%, var(--dragon) 55%, var(--sangre) 100%);
+  --grad-niebla: linear-gradient(180deg, #f4f5f7 0%, var(--humo) 100%);
+  /* Titulares: la última palabra pasa de negro a rojo */
+  --grad-titulo: linear-gradient(90deg, #1a0a0f 0%, var(--dragon) 45%, var(--brasa) 100%);
+  --grad-titulo-hero: linear-gradient(90deg, #ffffff 0%, #ff8fa3 45%, var(--brasa) 100%);
+
+  /* Tipografías */
+  --font-titulo: "Poppins", system-ui, sans-serif;
+  --font-texto: "Inter", system-ui, sans-serif;
+
+  /* Escala tipográfica fluida (mobile → desktop) */
+  --fs-hero: clamp(2.6rem, 6vw + 0.5rem, 5.6rem);
+  --fs-h2: clamp(2.1rem, 3.6vw + 0.6rem, 4rem);
+  --fs-h3: clamp(1.25rem, 1vw + 0.9rem, 1.75rem);
+  --fs-base: clamp(1rem, 0.2vw + 0.95rem, 1.125rem);
+  --fs-small: 0.875rem;
+
+  /* Espaciados */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: clamp(4rem, 8vw, 7.5rem);
+
+  /* Radios: el diseño usa esquinas muy redondeadas */
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --sombra-card: 0 24px 50px -24px rgba(18, 22, 28, 0.25);
+  --sombra-roja: 0 14px 30px -10px rgba(224, 36, 63, 0.55);
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+
+  /* Breakpoints (referencia: las media queries no aceptan variables)
+     --bp-sm: 640px  --bp-md: 960px  --bp-lg: 1200px */
+}

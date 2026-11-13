@@ -1,0 +1,283 @@
+/* =========================================================
+   Base: reset, tipografía y componentes reutilizables
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-texto);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--obsidiana);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Foco visible y consistente en toda la web */
+:focus-visible {
+  outline: 3px solid var(--brasa);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--brasa);
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primario {
+  background: var(--grad-fuego);
+  color: var(--blanco);
+  box-shadow: var(--sombra-roja);
+}
+
+.btn--oscuro {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--texto-claro);
+}
+
+.btn--oscuro:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.btn--blanco {
+  background: var(--blanco);
+  color: var(--texto);
+  border: 1px solid rgba(18, 22, 28, 0.08);
+  box-shadow: var(--sombra-card);
+}
+
+.btn--grande {
+  min-height: 60px;
+  padding: 1rem 2.25rem;
+  font-size: 1.125rem;
+}
+
+/* Etiqueta tipo "píldora" con punto rojo */
+.chip-punto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(224, 36, 63, 0.5);
+  border-radius: var(--radius-pill);
+  background: rgba(224, 36, 63, 0.08);
+  color: var(--texto-claro);
+  font-size: 0.95rem;
+}
+
+.chip-punto::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brasa);
+  box-shadow: 0 0 10px var(--brasa);
+}
+
+/* Antetítulo de sección: línea + texto en mayúsculas */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--dragon);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+/* Palabras destacadas en degradado */
+.grad {
+  background: var(--grad-titulo);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Evita que se corte el degradado en saltos de línea */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Ícono cuadrado rojo (pasos, beneficios, avatares) */
+.icono-rojo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--grad-fuego);
+  color: var(--blanco);
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: var(--sombra-roja);
+}
+
+.icono-rojo svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Botón redondo con ícono */
+.btn-icono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--blanco);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-icono svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-icono:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Aparición suave al hacer scroll (la activa main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Sin JS el contenido tiene que verse igual */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}

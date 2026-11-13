@@ -1,0 +1,13 @@
+# Diseños de referencia (pesados, se guardan fuera del repo)
+Diseño/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+
+# Dependencias y secretos
+node_modules/
+.env
+.env.*
