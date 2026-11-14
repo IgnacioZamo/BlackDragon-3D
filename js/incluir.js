@@ -71,7 +71,23 @@
     document.readyState === "complete" ? saltar() : window.addEventListener("load", saltar, { once: true });
   }
 
+  // Abierta con doble clic (file://) el navegador bloquea fetch: se avisa cómo abrirla
+  function avisarSinServidor() {
+    document.body.innerHTML =
+      '<div class="error-carga">' +
+      "<h1>Falta abrir la página desde un servidor</h1>" +
+      "<p>Esta web une varios archivos HTML, y el navegador no lo permite si se abre con doble clic.</p>" +
+      "<p>Abrí <strong>iniciar.bat</strong> (en la carpeta del proyecto) y se va a abrir sola en el navegador.</p>" +
+      "</div>";
+    document.documentElement.classList.remove("cargando");
+  }
+
   async function iniciar() {
+    if (window.location.protocol === "file:") {
+      avisarSinServidor();
+      return;
+    }
+
     try {
       await incluir(document.body);
       await esperarEstilos();

@@ -130,13 +130,17 @@ Breakpoints mobile-first: 640 px, 960 px y 1200 px.
 
 ## Cómo ejecutarlo
 
-Desde la carpeta del proyecto:
+**Doble clic en `iniciar.bat`**: levanta el servidor y abre <http://localhost:5173> en el navegador. Para detenerlo, se cierra esa ventana. Necesita Python instalado.
+
+**No abrir `index.html` con doble clic**: el navegador bloquea que la página lea los HTML de `sections/` y aparece un aviso.
+
+También se puede levantar a mano desde la carpeta del proyecto:
 
 ```bash
 python -m http.server 5173
 ```
 
-y abrir <http://localhost:5173>. Para publicar, se sube la carpeta completa (menos `Diseño/`) al hosting.
+Para publicar, se sube la carpeta completa (menos `Diseño/`) al hosting; ahí funciona sin hacer nada.
 
 ## Decisiones respecto del diseño
 
