@@ -1,0 +1,261 @@
+/* =========================================================
+   Componentes compartidos por varias secciones
+   ========================================================= */
+
+/* ---------- boton ---------- */
+/* ---------- Boton ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primario {
+  background: var(--grad-fuego);
+  color: var(--blanco);
+  box-shadow: var(--sombra-roja);
+}
+
+.btn--oscuro {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--texto-claro);
+}
+
+.btn--oscuro:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.btn--blanco {
+  background: var(--blanco);
+  color: var(--texto);
+  border: 1px solid rgba(18, 22, 28, 0.08);
+  box-shadow: var(--sombra-card);
+}
+
+.btn--grande {
+  min-height: 60px;
+  padding: 1rem 2.25rem;
+  font-size: 1.125rem;
+}
+
+/* ---------- BotonIcono ---------- */
+.btn-icono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--blanco);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-icono svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-icono:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- marca ---------- */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.marca__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.marca__logo--grande {
+  width: 64px;
+  height: 64px;
+}
+
+.marca__nombre {
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  white-space: nowrap;
+}
+
+.marca__nombre span {
+  color: var(--brasa);
+}
+
+@media (min-width: 960px) {
+  .marca__logo:not(.marca__logo--grande) {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ---------- chip-punto ---------- */
+.chip-punto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(224, 36, 63, 0.5);
+  border-radius: var(--radius-pill);
+  background: rgba(224, 36, 63, 0.08);
+  color: var(--texto-claro);
+  font-size: 0.95rem;
+}
+
+.chip-punto::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brasa);
+  box-shadow: 0 0 10px var(--brasa);
+}
+
+/* ---------- cabecera-seccion ---------- */
+.seccion__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.seccion__bajada {
+  max-width: 28rem;
+  color: var(--texto-suave);
+  font-size: clamp(1rem, 0.3vw + 0.95rem, 1.2rem);
+}
+
+/* Antetítulo: línea + texto en mayúsculas */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--dragon);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+/* ---------- icono-rojo ---------- */
+.icono-rojo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--grad-fuego);
+  color: var(--blanco);
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: var(--sombra-roja);
+}
+
+.icono-rojo svg,
+.icono-rojo img {
+  width: 26px;
+  height: 26px;
+}
+
+/* ---------- badge ---------- */
+.badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge--rojo {
+  background: var(--grad-fuego);
+  color: var(--blanco);
+}
+
+.badge--blanco {
+  background: var(--blanco);
+  color: var(--texto);
+}
+
+@media (min-width: 640px) {
+  .badge {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ---------- precio ---------- */
+.precio {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .precio {
+    font-size: 1.75rem;
+  }
+}
+
+/* ---------- boton-favorito ---------- */
+.boton-favorito {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  background: rgba(12, 16, 20, 0.55);
+}
+
+.boton-favorito[aria-pressed="true"] {
+  background: var(--brasa);
+  border-color: var(--brasa);
+}
+
+.boton-favorito[aria-pressed="true"] svg {
+  fill: currentColor;
+}

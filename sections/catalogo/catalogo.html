@@ -1,0 +1,108 @@
+<!-- ===================== CATÁLOGO: categorías y piezas destacadas ===================== -->
+<link rel="stylesheet" href="sections/catalogo/catalogo.css">
+
+<!-- Categorías: al hacer clic bajan a las piezas destacadas y las filtran (data-filtro-link) -->
+<section class="seccion categorias" id="catalogo" aria-labelledby="titulo-categorias">
+  <div class="container">
+    <div class="seccion__cabecera">
+      <div>
+        <p class="eyebrow">Catálogo</p>
+        <h2 id="titulo-categorias">Elegí tu <span class="grad">universo</span></h2>
+      </div>
+      <p class="seccion__bajada">Cuatro mundos, cientos de piezas. Todo impreso en nuestro taller y revisado a mano antes de salir.</p>
+    </div>
+
+    <div class="categorias__grid">
+      <a class="cat-card cat-card--dragones reveal" href="#productos" data-filtro-link="dragones">
+        <img src="assets/img/dragon-ancestral.jpg" alt="" width="1200" height="828" loading="lazy">
+        <span class="cat-card__cant">24 modelos</span>
+        <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <span class="cat-card__info">
+          <strong>Dragones</strong>
+          <span>Desde minis de escritorio hasta 40 cm</span>
+        </span>
+      </a>
+      <a class="cat-card cat-card--anime reveal" href="#productos" data-filtro-link="anime">
+        <img src="assets/img/cat-anime.jpg" alt="" width="505" height="762" loading="lazy">
+        <span class="cat-card__cant">38 modelos</span>
+        <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <span class="cat-card__info">
+          <strong>Figuras de anime</strong>
+          <span>Personajes originales y a pedido</span>
+        </span>
+      </a>
+      <a class="cat-card cat-card--calabozos reveal" href="#productos" data-filtro-link="calabozos">
+        <img src="assets/img/cat-calabozos.jpg" alt="" width="448" height="266" loading="lazy">
+        <span class="cat-card__cant">16 sets</span>
+        <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <span class="cat-card__info">
+          <strong>Calabozos</strong>
+          <span>Modulares, listos para rol</span>
+        </span>
+      </a>
+      <a class="cat-card cat-card--rol reveal" href="#productos" data-filtro-link="rol">
+        <img src="assets/img/cat-rol.jpg" alt="" width="448" height="272" loading="lazy">
+        <span class="cat-card__cant">50+ ítems</span>
+        <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <span class="cat-card__info">
+          <strong>Rol y accesorios</strong>
+          <span>Dados, soportes, llaveros</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Piezas destacadas: las tarjetas se arman con data/productos.json -->
+<section class="seccion productos" id="productos" aria-labelledby="titulo-productos">
+  <div class="container">
+    <div class="seccion__cabecera">
+      <div>
+        <p class="eyebrow">Más pedidos</p>
+        <h2 id="titulo-productos">Piezas <span class="grad">destacadas</span></h2>
+      </div>
+      <a class="btn btn--blanco" href="#catalogo">Ver todo el catálogo <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="filtros" role="group" aria-label="Filtrar piezas por categoría">
+      <button class="filtro activo" type="button" data-filtro="todo" aria-pressed="true">Todo</button>
+      <button class="filtro" type="button" data-filtro="dragones" aria-pressed="false">Dragones</button>
+      <button class="filtro" type="button" data-filtro="anime" aria-pressed="false">Anime</button>
+      <button class="filtro" type="button" data-filtro="calabozos" aria-pressed="false">Calabozos</button>
+      <button class="filtro" type="button" data-filtro="rol" aria-pressed="false">Rol</button>
+      <button class="filtro" type="button" data-filtro="packs" aria-pressed="false">Packs</button>
+    </div>
+
+    <ul class="productos__grid"></ul>
+    <p class="productos__vacio" hidden>Todavía no hay piezas destacadas en esta categoría.</p>
+  </div>
+</section>
+
+<!-- Molde de cada tarjeta de producto. catalogo.js lo copia y completa
+     los elementos marcados con data-campo usando los datos del JSON. -->
+<template id="plantilla-producto">
+  <li class="prod-card reveal">
+    <div class="prod-card__media">
+      <img data-campo="imagen" src="" alt="" width="565" height="522" loading="lazy">
+      <span class="badge" data-campo="etiqueta"></span>
+      <button class="boton-favorito btn-icono" type="button" aria-pressed="false" data-campo="favorito">
+        <span class="sr-only">Guardar en favoritos</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+      </button>
+    </div>
+    <div class="prod-card__info">
+      <p class="prod-card__cat" data-campo="categoria"></p>
+      <h3><a class="prod-card__link" data-campo="nombre" href=""></a></h3>
+      <p class="prod-card__desc" data-campo="resumen"></p>
+      <div class="prod-card__pie">
+        <p class="precio" data-campo="precio"></p>
+        <a class="prod-card__mas" data-campo="pedir" href="#" target="_blank" rel="noopener">
+          <span class="sr-only">Pedir por WhatsApp</span>
+          <span aria-hidden="true">+</span>
+        </a>
+      </div>
+    </div>
+  </li>
+</template>
+
+<script src="sections/catalogo/catalogo.js"></script>

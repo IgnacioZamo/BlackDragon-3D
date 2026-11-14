@@ -11,6 +11,3 @@ Thumbs.db
 node_modules/
 .env
 .env.*
-
-# Sitio armado por build.py (se genera desde src/)
-dist/

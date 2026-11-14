@@ -4,71 +4,96 @@ Landing page y ficha de producto para **Black Dragon 3D**, un taller de impresi�
 
 ## Estructura
 
-El sitio es HTML estático, CSS y un poco de JS, como siempre, pero **organizado en módulos**: cada sección y cada componente tiene su carpeta con su `.html`, su `.css` y, si lo necesita, su `.js`. El script `build.py` los junta y deja el sitio final en `dist/`.
-
 ```
 BlackDragon/
-├── build.py                       # Arma dist/ a partir de src/
+├── index.html                  # Página principal: carga sections/principal.html
+├── producto.html               # Ficha de producto: carga header, producto y footer
+├── sections/
+│   ├── principal.html          # HTML general de la landing: qué secciones van y en qué orden
+│   ├── header/                 # header.html + header.css + header.js (menú móvil)
+│   ├── hero/                   # hero.html + hero.css (portada y cinta de categorías)
+│   ├── catalogo/               # catalogo.html + catalogo.css + catalogo.js (categorías y piezas)
+│   ├── galeria/                # galeria.html + galeria.css
+│   ├── pedidos/                # pedidos.html + pedidos.css (pedidos a medida)
+│   ├── por-que/                # por-que.html + por-que.css (por qué Black Dragon)
+│   ├── testimonios/            # testimonios.html + testimonios.css
+│   ├── contacto/               # contacto.html + contacto.css (llamado a WhatsApp)
+│   ├── footer/                 # footer.html + footer.css
+│   └── producto/               # producto.html + producto.css + producto.js (ficha)
+├── data/
+│   └── productos.json          # Productos: nombre, precio, descripción, imágenes…
+├── css/
+│   ├── variables.css           # Paleta, tipografías, espaciados, radios y breakpoints
+│   ├── base.css                # Reset y utilidades globales
+│   └── componentes.css         # Piezas que usan varias secciones (botones, etiquetas, precio…)
+├── js/
+│   ├── incluir.js              # Une los HTML de las secciones
+│   └── comun.js                # Productos, precios, WhatsApp, favoritos y animaciones
 ├── assets/
-│   ├── img/                       # Logo, favicon e ilustraciones recortadas del diseño
-│   └── iconos/                    # Íconos SVG de los beneficios
-├── src/
-│   ├── paginas/
-│   │   ├── index.html             # Landing: <head> + qué secciones van y en qué orden
-│   │   └── producto.html          # Ficha de producto (?id=<producto>)
-│   ├── secciones/                 # Un módulo por sección de la página
-│   │   ├── header/                #   header.html + header.css
-│   │   ├── hero/
-│   │   ├── categorias/
-│   │   ├── productos/             #   productos.html + .css + .js (filtros)
-│   │   ├── galeria/
-│   │   ├── pedidos-medida/
-│   │   ├── por-que/
-│   │   ├── testimonios/
-│   │   ├── cta/
-│   │   ├── footer/
-│   │   └── detalle-producto/      #   .html + .css + .js (completa la ficha)
-│   ├── componentes/               # Piezas reutilizables que usan las secciones
-│   │   ├── navegacion/            #   .html + .css + .js (menú móvil)
-│   │   ├── tarjeta-producto/  tarjeta-categoria/  tarjeta-testimonio/  tarjeta-flotante/
-│   │   ├── item-galeria/  paso/  beneficio/  marca/  cinta/
-│   │   ├── boton-favorito/        #   .html + .css + .js (favoritos)
-│   │   └── boton/  badge/  precio/  chip-punto/  icono-rojo/  filtros/  cabecera-seccion/
-│   │       visor-modelo/  dato-destacado/  lista-chips/  miniaturas/   (solo .css)
-│   ├── estilos/
-│   │   ├── variables.css          # Paleta, tipografías, espaciados, radios y breakpoints
-│   │   └── base.css               # Reset y utilidades globales
-│   └── js/
-│       ├── datos.js               # Número de WhatsApp y datos de los productos
-│       └── comun.js               # Precios, enlaces de WhatsApp y animación de aparición
-├── dist/                          # Sitio armado (no se edita ni se sube a git)
-└── Diseño/                        # Láminas de diseño de referencia (fuera del repo)
+│   ├── img/                    # Logo, favicon e imágenes de las secciones
+│   │   └── productos/          # Imágenes de los productos
+│   └── iconos/                 # Íconos SVG
+└── Diseño/                     # Láminas de diseño de referencia (fuera del repo)
 ```
 
-### Cómo se arma
+### Cómo se enlazan los HTML
 
-Dentro de los `.html` de `src/` se usan dos directivas en forma de comentario:
+`index.html` tiene el `<head>` y una sola línea que trae el HTML general:
 
 ```html
-<!-- @incluir componentes/paso/paso.html numero="1" titulo="Contanos tu idea" texto="…" -->
-<!-- @usar componentes/boton -->
+<div data-incluir="sections/principal.html"></div>
 ```
 
-- `@incluir` pega ese archivo en ese lugar. Dentro del archivo incluido, `{{numero}}`, `{{titulo}}`, etc. se reemplazan por los valores pasados. Así una tarjeta se escribe una sola vez y se usa varias veces.
-- `@usar` no pega nada: avisa que esa parte usa los estilos de un módulo (por ejemplo, los botones).
-- Los comentarios `<!--- … -->` (con tres guiones) documentan cada módulo y no se copian al sitio final.
+`sections/principal.html` arma la página con una línea por sección:
 
-`build.py` arma cada página de `src/paginas/` y junta los CSS y JS de todos los módulos usados en un solo `css/estilos.css` y un solo `js/sitio.js`. Los ordena como si fueran imports: primero lo que un módulo usa y después el módulo, así una sección puede ajustar a sus componentes.
+```html
+<div data-incluir="sections/catalogo/catalogo.html"></div>
+<div data-incluir="sections/galeria/galeria.html"></div>
+```
 
-### Cómo se agrega algo
+Cada HTML de sección enlaza su propio CSS (y su JS, si tiene) al principio y al final del archivo. `js/incluir.js` reemplaza cada `data-incluir` por el contenido de ese archivo cuando se abre la página.
 
-- **Una sección:** crear `src/secciones/nombre/nombre.html` (y `nombre.css`, y `nombre.js` si necesita), y sumarla con `@incluir` en `src/paginas/index.html`.
-- **Un componente:** crear `src/componentes/nombre/` con sus archivos e incluirlo desde la sección que lo usa.
-- **Reordenar la landing:** mover las líneas `@incluir` en `src/paginas/index.html`.
+- **Reordenar, agregar o quitar una sección:** mover o borrar su línea en `sections/principal.html`.
+- **Sección nueva:** crear `sections/nombre/nombre.html` (y su `.css`) y sumar su línea en `principal.html`.
+
+### Productos (`data/productos.json`)
+
+Cada producto tiene esta forma:
+
+```json
+{
+  "id": "dragon-ancestral",
+  "nombre": "Dragón Ancestral",
+  "categoria": "Dragones · Resina",
+  "filtros": ["dragones"],
+  "etiqueta": { "texto": "Más vendido", "color": "rojo" },
+  "precio": 38900,
+  "resumen": "Alas desplegables · 28 cm · Base incluida",
+  "descripcion": "Alas desplegables y base incluida. Acabado listo para pintar.",
+  "caracteristicas": ["28 cm", "Resina", "0,05 mm"],
+  "imagenes": [
+    { "src": "assets/img/productos/dragon-ancestral-1.jpg", "alt": "Descripción de la foto" }
+  ]
+}
+```
+
+- `id`: identificador sin espacios ni tildes. Se usa en el enlace a la ficha (`producto.html?id=dragon-ancestral`).
+- `filtros`: botones de filtro donde aparece (`dragones`, `anime`, `calabozos`, `rol`, `packs`).
+- `etiqueta`: cartel sobre la foto; `color` puede ser `rojo` o `blanco`. Se puede borrar si el producto no lleva.
+- `precio`: número sin puntos ni signo; la página lo muestra como `$ 38.900`.
+- `resumen`: línea corta de la tarjeta. `descripcion`: texto de la ficha.
+- `imagenes`: la primera es la de la tarjeta; todas se ven en la ficha. Para cambiarlas, poner los archivos en `assets/img/productos/` y actualizar `src`. `alt` describe la foto para quienes no la ven.
+
+Los productos aparecen en el catálogo en el mismo orden que en el JSON.
 
 ## Tecnologías y stack
 
-HTML, CSS y JavaScript puro, sin dependencias. El único agregado es `build.py`, un script de Python sin librerías externas (solo hace falta tener Python 3). Junta los módulos en archivos estáticos: el resultado es HTML común, bueno para SEO y para las vistas previas al compartir el link, con un solo CSS y un solo JS. Las fuentes se cargan desde Google Fonts.
+HTML, CSS y JavaScript puro, sin dependencias ni instalación. Un HTML no puede incluir otros por sí solo, así que `js/incluir.js` (un script corto) los une al abrir la página. Las fuentes se cargan desde Google Fonts.
+
+**Necesita un servidor:** el navegador no deja leer otros archivos si se abre `index.html` con doble clic. Cualquier hosting sirve, y para trabajar en la computadora alcanza con el servidor de Python (ver abajo).
+
+Como el contenido se une con JavaScript, Google lo indexa, pero las vistas previas al compartir el link (WhatsApp, redes) muestran solo el título, la descripción y la imagen del `<head>`.
+
 ## Paleta
 
 | Nombre    | Variable       | Hex       |
@@ -90,34 +115,29 @@ Degradados: **Fuego** (`--grad-fuego`: `#E0243F → #A40725 → #5A0415`) y **Ni
 
 ## Secciones
 
-1. Header con navegación (menú desplegable en celular).
-2. Hero con titular, botones, estadísticas, figura destacada y cinta de categorías.
-3. Catálogo: tarjetas de las 4 categorías (filtran las piezas destacadas).
-4. Piezas destacadas con filtros (Todo, Dragones, Anime, Calabozos, Rol, Packs), favoritos y pedido por WhatsApp.
-5. Galería.
-6. Pedidos a medida en 3 pasos.
-7. Por qué Black Dragon.
-8. Testimonios.
-9. CTA a WhatsApp y footer.
-10. Ficha de producto (`producto.html?id=dragon-ancestral`, `hechicero-encapuchado`, `torre-del-calabozo`, `espadachina-carmesi`).
+1. **Header:** navegación (menú desplegable en celular).
+2. **Hero:** titular, botones, estadísticas, figura destacada y cinta de categorías.
+3. **Catálogo:** tarjetas de las 4 categorías (filtran las piezas) y piezas destacadas con filtros, favoritos y pedido por WhatsApp.
+4. **Galería.**
+5. **Pedidos:** pedidos a medida en 3 pasos.
+6. **Por qué Black Dragon.**
+7. **Testimonios.**
+8. **Contacto:** llamado a escribir por WhatsApp.
+9. **Footer.**
+10. **Ficha de producto** (`producto.html?id=…`).
 
 Breakpoints mobile-first: 640 px, 960 px y 1200 px.
 
 ## Cómo ejecutarlo
 
-Para trabajar (arma, sirve en <http://localhost:5173> y vuelve a armar cada vez que se guarda un archivo de `src/` o `assets/`):
+Desde la carpeta del proyecto:
 
 ```bash
-python build.py --servir
+python -m http.server 5173
 ```
 
-Para generar el sitio final una sola vez (por ejemplo, antes de subirlo al hosting):
+y abrir <http://localhost:5173>. Para publicar, se sube la carpeta completa (menos `Diseño/`) al hosting.
 
-```bash
-python build.py
-```
-
-Lo que se sube al hosting es el contenido de `dist/`. **No se edita `dist/`**: se edita `src/` y se vuelve a armar.
 ## Decisiones respecto del diseño
 
 - El botón **"Agregar al carrito"** de la ficha móvil se reemplazó por **"Pedir por WhatsApp"**, porque por ahora no hay carrito ni pagos. El "+" de cada tarjeta también abre WhatsApp con el producto precargado.
@@ -125,12 +145,12 @@ Lo que se sube al hosting es el contenido de `dist/`. **No se edita `dist/`**: s
 
 ## Pendientes
 
+- [ ] **Imágenes de los productos**: reemplazar las de `assets/img/productos/` (hoy son ilustraciones recortadas del diseño) y revisar `src` y `alt` en `data/productos.json`.
+- [ ] **Precios y descripciones** definitivos en `data/productos.json`. Hechicero, Torre y Espadachina usan la línea corta como descripción.
 - [ ] **Logo original** (PNG con fondo transparente o SVG). El actual está recortado de la captura del diseño.
-- [ ] **Fotos reales** de las piezas. Las imágenes actuales son ilustraciones recortadas de las láminas de diseño.
-- [ ] **Número de WhatsApp**: completar `WHATSAPP_NUMERO` en `src/js/datos.js`. Mientras esté vacío, WhatsApp abre el selector de contactos.
-- [ ] Enlaces de **Instagram, Facebook, TikTok y correo** en `src/secciones/footer/footer.html` (hoy son `#`).
+- [ ] **Número de WhatsApp**: completar `WHATSAPP_NUMERO` al principio de `js/comun.js`. Mientras esté vacío, WhatsApp abre el selector de contactos.
+- [ ] Enlaces de **Instagram, Facebook, TikTok y correo** en `sections/footer/footer.html` (hoy son `#`).
 - [ ] Páginas de **Envíos y pagos** y **Preguntas frecuentes**.
-- [ ] **Descripciones largas** de Hechicero, Torre y Espadachina (hoy usan la línea corta de la tarjeta).
 - [ ] Cantidades reales por categoría (24, 38, 16 y 50+ salen del diseño).
 - [ ] Imagen Open Graph con URL absoluta cuando haya dominio.
 - [ ] Probar en Firefox y en un celular real.

@@ -1,0 +1,245 @@
+/* =========================================================
+   Hero: portada con titular, figura y cinta de categorías
+   ========================================================= */
+
+/* Franja oscura que envuelve header y hero en la landing */
+.portada {
+  position: relative;
+  color: var(--texto-claro);
+  /* Resplandor rojo detrás de la figura, como en el diseño */
+  background:
+    radial-gradient(ellipse 55% 60% at 78% 50%, rgba(164, 7, 37, 0.45), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(90, 4, 21, 0.35), transparent 70%),
+    var(--obsidiana);
+  overflow: hidden;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  display: grid;
+  gap: 2rem;
+  padding-block: 2.5rem 3rem;
+}
+
+.hero__titulo {
+  margin-top: 1.5rem;
+  font-size: var(--fs-hero);
+  color: var(--texto-claro);
+  line-height: 1.02;
+}
+
+.hero__grad {
+  background: var(--grad-titulo-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Mantiene "friki, impreso" en una línea, como en el diseño */
+@media (min-width: 480px) {
+  .hero__grad {
+    white-space: nowrap;
+  }
+}
+
+.hero__bajada {
+  max-width: 34rem;
+  margin-top: 1.5rem;
+  color: #c3c7ce;
+  font-size: clamp(1.05rem, 0.6vw + 0.95rem, 1.35rem);
+  line-height: 1.65;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero__acciones .btn {
+  flex: 1 1 100%;
+}
+
+.hero__stats {
+  display: flex;
+  gap: clamp(1.25rem, 5vw, 4rem);
+  margin: 2.5rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero__stats dt {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw + 0.6rem, 2.6rem);
+  letter-spacing: -0.02em;
+  color: var(--blanco);
+  white-space: nowrap;
+}
+
+.hero__stats dd {
+  margin: 0.25rem 0 0;
+  color: var(--texto-claro-suave);
+  font-size: clamp(0.8rem, 0.4vw + 0.7rem, 1rem);
+}
+
+.hero__arte {
+  position: relative;
+  aspect-ratio: 1 / 0.9;
+  display: grid;
+  place-items: center;
+}
+
+/* Anillos concéntricos detrás de la figura */
+.hero__anillos {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 96%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.hero__anillos::after {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 36, 63, 0.25);
+}
+
+.hero__img {
+  position: relative;
+  width: 100%;
+  /* Funde los bordes del recorte con el fondo del hero */
+  -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 88%);
+  mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 88%);
+  animation: flotar 7s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero__acciones .btn {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 3rem;
+    padding-block: 4.5rem 5rem;
+  }
+
+  .hero__arte {
+    aspect-ratio: 1;
+  }
+}
+
+/* ---------- tarjeta-flotante ---------- */
+.tarjeta-flotante {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1.1rem 0.7rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(26, 32, 40, 0.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+.tarjeta-flotante strong {
+  display: block;
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blanco);
+}
+
+.tarjeta-flotante div span {
+  font-size: 0.85rem;
+  color: var(--texto-claro-suave);
+}
+
+.tarjeta-flotante__icono {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--grad-fuego);
+  color: var(--blanco);
+  font-size: 1.1rem;
+}
+
+.tarjeta-flotante--arriba {
+  top: 8%;
+  left: 0;
+}
+
+.tarjeta-flotante--abajo {
+  bottom: 8%;
+  right: 0;
+}
+
+@media (min-width: 960px) {
+  .tarjeta-flotante--arriba {
+    top: 14%;
+    left: -2%;
+  }
+
+  .tarjeta-flotante--abajo {
+    bottom: 12%;
+    right: -4%;
+  }
+}
+
+/* ---------- cinta ---------- */
+.cinta {
+  /* El padding extra de abajo queda tapado por el cuerpo claro (margin-top negativo) */
+  padding: 1.5rem 0 calc(1.5rem + 40px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.cinta__pista {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  width: max-content;
+  animation: cinta 40s linear infinite;
+}
+
+.cinta span {
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2vw + 0.8rem, 2.6rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4a5059;
+  white-space: nowrap;
+}
+
+.cinta i {
+  font-style: normal;
+  color: var(--brasa);
+  font-size: 1.6rem;
+}
+
+@keyframes cinta {
+  to {
+    transform: translateX(-50%);
+  }
+}

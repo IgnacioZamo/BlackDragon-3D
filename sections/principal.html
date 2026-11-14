@@ -1,0 +1,27 @@
+<!-- =========================================================
+     HTML GENERAL DE LA LANDING
+     Acá se arma la página: qué secciones van y en qué orden.
+     Cada data-incluir trae el HTML de una sección de sections/.
+     Para reordenar, agregar o quitar una sección, alcanza con
+     mover o borrar su línea.
+     ========================================================= -->
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Franja oscura superior: navegación + portada -->
+<div class="portada" id="inicio">
+  <div data-incluir="sections/header/header.html"></div>
+  <div data-incluir="sections/hero/hero.html"></div>
+</div>
+
+<!-- Cuerpo claro -->
+<main id="contenido" class="cuerpo">
+  <div data-incluir="sections/catalogo/catalogo.html"></div>
+  <div data-incluir="sections/galeria/galeria.html"></div>
+  <div data-incluir="sections/pedidos/pedidos.html"></div>
+  <div data-incluir="sections/por-que/por-que.html"></div>
+  <div data-incluir="sections/testimonios/testimonios.html"></div>
+  <div data-incluir="sections/contacto/contacto.html"></div>
+</main>
+
+<div data-incluir="sections/footer/footer.html"></div>

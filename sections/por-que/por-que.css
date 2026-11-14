@@ -1,0 +1,109 @@
+/* =========================================================
+   Por qué Black Dragon
+   ========================================================= */
+
+/* ---------- dato-destacado ---------- */
+.dato-destacado {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 300px;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  color: var(--blanco);
+  /* Líneas horizontales finas: evocan las capas de la impresión */
+  background:
+    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.07) 0 2px, transparent 2px 9px),
+    var(--grad-fuego);
+  box-shadow: 0 30px 60px -25px rgba(164, 7, 37, 0.6);
+}
+
+.dato-destacado__numero {
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: clamp(4.5rem, 5vw + 1rem, 6rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.dato-destacado__numero span {
+  font-size: 0.35em;
+  letter-spacing: -0.02em;
+}
+
+.dato-destacado__texto {
+  max-width: 22rem;
+  font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.3rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (min-width: 960px) {
+  .dato-destacado {
+    padding: 2.5rem;
+  }
+}
+
+/* ---------- beneficio ---------- */
+.beneficio {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(18, 22, 28, 0.06);
+  background: var(--blanco);
+  box-shadow: var(--sombra-card);
+}
+
+.beneficio h3 {
+  margin-top: 1.5rem;
+  font-size: var(--fs-h3);
+  font-weight: 800;
+}
+
+.beneficio p {
+  margin-top: 0.75rem;
+  color: var(--texto-suave);
+}
+
+@media (min-width: 960px) {
+  .beneficio {
+    padding: 2.5rem 2.75rem;
+  }
+
+  .beneficio .icono-rojo {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* ---------- por-que ---------- */
+.porque__grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 640px) {
+  .porque__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .porque__grid .dato-destacado {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 960px) {
+  /* La tarjeta roja ocupa la primera columna completa */
+  .porque__grid {
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 1.75rem;
+  }
+
+  .porque__grid .dato-destacado {
+    grid-column: auto;
+    grid-row: span 2;
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "productos": [
+    {
+      "id": "dragon-ancestral",
+      "nombre": "Dragón Ancestral",
+      "categoria": "Dragones · Resina",
+      "filtros": ["dragones"],
+      "etiqueta": { "texto": "Más vendido", "color": "rojo" },
+      "precio": 38900,
+      "resumen": "Alas desplegables · 28 cm · Base incluida",
+      "descripcion": "Alas desplegables y base incluida. Acabado listo para pintar.",
+      "caracteristicas": ["28 cm", "Resina", "0,05 mm"],
+      "imagenes": [
+        { "src": "assets/img/productos/dragon-ancestral-1.jpg", "alt": "Dragón Ancestral, figura de dragón con alas rojas desplegadas" },
+        { "src": "assets/img/productos/dragon-ancestral-2.jpg", "alt": "Detalle de la cabeza del Dragón Ancestral" }
+      ]
+    },
+    {
+      "id": "hechicero-encapuchado",
+      "nombre": "Hechicero Encapuchado",
+      "categoria": "Rol · Miniatura",
+      "filtros": ["rol"],
+      "etiqueta": { "texto": "Nuevo", "color": "blanco" },
+      "precio": 6500,
+      "resumen": "Miniatura 32 mm · Lista para pintar",
+      "descripcion": "Miniatura 32 mm · Lista para pintar.",
+      "caracteristicas": ["32 mm", "Miniatura"],
+      "imagenes": [
+        { "src": "assets/img/productos/hechicero-encapuchado-1.jpg", "alt": "Hechicero Encapuchado, miniatura con capucha roja y báculo luminoso" },
+        { "src": "assets/img/productos/hechicero-encapuchado-2.jpg", "alt": "Hechicero Encapuchado sobre fondo gris" }
+      ]
+    },
+    {
+      "id": "torre-del-calabozo",
+      "nombre": "Torre del Calabozo",
+      "categoria": "Calabozos · PLA",
+      "filtros": ["calabozos", "packs"],
+      "etiqueta": { "texto": "Pack", "color": "rojo" },
+      "precio": 24200,
+      "resumen": "Set modular 12 piezas · Encastre sin pegamento",
+      "descripcion": "Set modular 12 piezas · Encastre sin pegamento.",
+      "caracteristicas": ["12 piezas", "PLA"],
+      "imagenes": [
+        { "src": "assets/img/productos/torre-del-calabozo-1.jpg", "alt": "Torre del Calabozo, castillo modular blanco con techos rojos" },
+        { "src": "assets/img/productos/torre-del-calabozo-2.jpg", "alt": "Torre modular vista de frente" }
+      ]
+    },
+    {
+      "id": "espadachina-carmesi",
+      "nombre": "Espadachina Carmesí",
+      "categoria": "Anime · Resina",
+      "filtros": ["anime"],
+      "etiqueta": { "texto": "Personalizable", "color": "blanco" },
+      "precio": 31500,
+      "resumen": "Figura 22 cm · Elegí colores y pose",
+      "descripcion": "Figura 22 cm · Elegí colores y pose.",
+      "caracteristicas": ["22 cm", "Resina"],
+      "imagenes": [
+        { "src": "assets/img/productos/espadachina-carmesi-1.jpg", "alt": "Espadachina Carmesí, figura anime de pelo rojo con espada" },
+        { "src": "assets/img/productos/espadachina-carmesi-2.jpg", "alt": "Espadachina Carmesí sobre fondo rojo" }
+      ]
+    }
+  ]
+}
