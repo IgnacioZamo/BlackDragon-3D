@@ -1,0 +1,21 @@
+<!--- Navegación principal. Parámetro: base ("" en la landing, "./" en otras páginas para volver a ella) -->
+<!-- @usar componentes/boton -->
+<nav class="nav container" aria-label="Principal">
+  <!-- @incluir componentes/marca/marca.html href="{{base}}#inicio" tamano="56" clase="" -->
+
+  <ul class="nav__links" id="menu">
+    <li><a href="{{base}}#inicio">Inicio</a></li>
+    <li><a href="{{base}}#catalogo">Catálogo</a></li>
+    <li><a href="{{base}}#a-medida">Pedidos a medida</a></li>
+    <li><a href="{{base}}#galeria">Galería</a></li>
+    <li><a href="{{base}}#contacto">Contacto</a></li>
+    <li class="nav__cta-movil"><a class="btn btn--primario" href="{{base}}#contacto">Pedir presupuesto</a></li>
+  </ul>
+
+  <a class="btn btn--primario nav__cta" href="{{base}}#contacto">Pedir presupuesto</a>
+
+  <button class="nav__toggle btn-icono" type="button" aria-expanded="false" aria-controls="menu">
+    <span class="sr-only">Abrir menú</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>

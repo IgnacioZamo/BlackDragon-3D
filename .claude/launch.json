@@ -4,7 +4,7 @@
     {
       "name": "blackdragon",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "5173", "--bind", "127.0.0.1"],
+      "runtimeArgs": ["build.py", "--servir"],
       "port": 5173
     }
   ]

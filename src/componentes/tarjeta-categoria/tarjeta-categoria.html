@@ -1,0 +1,11 @@
+<!--- Tarjeta de categoría. Al hacer clic baja a las piezas destacadas y las filtra.
+     Parámetros: id, nombre, cantidad, texto, imagen, ancho, alto -->
+<a class="cat-card cat-card--{{id}} reveal" href="#productos" data-filtro-link="{{id}}">
+  <img src="{{imagen}}" alt="" width="{{ancho}}" height="{{alto}}" loading="lazy">
+  <span class="cat-card__cant">{{cantidad}}</span>
+  <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+  <span class="cat-card__info">
+    <strong>{{nombre}}</strong>
+    <span>{{texto}}</span>
+  </span>
+</a>

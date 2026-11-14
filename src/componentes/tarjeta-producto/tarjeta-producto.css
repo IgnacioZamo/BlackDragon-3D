@@ -1,0 +1,141 @@
+/* En celular la tarjeta es horizontal (imagen a la izquierda), como en el diseño móvil */
+.prod-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--blanco);
+  border: 1px solid rgba(18, 22, 28, 0.06);
+  box-shadow: var(--sombra-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prod-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -24px rgba(18, 22, 28, 0.32);
+}
+
+.prod-card[hidden] {
+  display: none;
+}
+
+.prod-card__media {
+  position: relative;
+  background: var(--obsidiana);
+}
+
+.prod-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* El corazón no entra en la tarjeta horizontal del celular */
+.prod-card .boton-favorito {
+  display: none;
+}
+
+.prod-card__info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.1rem;
+}
+
+.prod-card__cat {
+  color: var(--texto-suave);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.prod-card h3 {
+  margin-top: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Toda la tarjeta lleva a la ficha del producto */
+.prod-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.prod-card__desc {
+  display: none;
+  margin-top: 0.4rem;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.prod-card__pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.prod-card__mas {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--grad-fuego);
+  color: var(--blanco);
+  font-size: 1.5rem;
+  line-height: 1;
+  box-shadow: var(--sombra-roja);
+  transition: transform 0.2s ease;
+}
+
+.prod-card__mas:hover {
+  transform: scale(1.08);
+}
+
+@media (min-width: 640px) {
+  .prod-card {
+    grid-template-columns: 1fr;
+    /* La imagen no se estira: el alto extra va a la info */
+    grid-template-rows: auto 1fr;
+    border-radius: var(--radius-lg);
+  }
+
+  .prod-card__media {
+    aspect-ratio: 565 / 522;
+  }
+
+  .prod-card .boton-favorito {
+    display: grid;
+  }
+
+  .prod-card__info {
+    padding: 1.6rem 1.6rem 1.75rem;
+  }
+
+  .prod-card h3 {
+    font-size: 1.45rem;
+  }
+
+  .prod-card__desc {
+    display: block;
+  }
+
+  .prod-card__pie {
+    padding-top: 1.5rem;
+  }
+
+  .prod-card__mas {
+    width: 58px;
+    height: 58px;
+  }
+}

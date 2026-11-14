@@ -1,0 +1,18 @@
+/* Franja oscura superior. En la landing envuelve la navegación, el hero y la cinta. */
+.header {
+  position: relative;
+  color: var(--texto-claro);
+  /* Resplandor rojo detrás de la figura, como en el diseño */
+  background:
+    radial-gradient(ellipse 55% 60% at 78% 50%, rgba(164, 7, 37, 0.45), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(90, 4, 21, 0.35), transparent 70%),
+    var(--obsidiana);
+  overflow: hidden;
+}
+
+/* Variante de las páginas internas: solo la barra, sin resplandor */
+.header--compacto {
+  padding-bottom: 1.5rem;
+  background: var(--obsidiana);
+  overflow: visible;
+}

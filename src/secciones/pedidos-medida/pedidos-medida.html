@@ -1,0 +1,25 @@
+<!--- Pedidos a medida: tres pasos y vista previa del modelado -->
+<!-- @usar componentes/cabecera-seccion -->
+<!-- @usar componentes/visor-modelo -->
+<section class="seccion medida" id="a-medida" aria-labelledby="titulo-medida">
+  <div class="container medida__grid">
+    <div>
+      <p class="eyebrow">Pedidos a medida</p>
+      <h2 id="titulo-medida">¿Tenés una idea?<br> <span class="grad">La hacemos realidad.</span></h2>
+      <p class="medida__bajada">Mandanos un boceto, una referencia o tu modelo 3D y recibí un presupuesto sin compromiso en menos de 24 horas.</p>
+
+      <ol class="medida__pasos">
+        <!-- @incluir componentes/paso/paso.html numero="1" titulo="Contanos tu idea" texto="Por WhatsApp o formulario: imágenes, medidas y uso." -->
+        <!-- @incluir componentes/paso/paso.html numero="2" titulo="Diseñamos y aprobás" texto="Modelado 3D con vista previa antes de imprimir." -->
+        <!-- @incluir componentes/paso/paso.html numero="3" titulo="Imprimimos y enviamos" texto="Acabado, control de calidad y envío embalado." -->
+      </ol>
+    </div>
+
+    <div class="visor reveal">
+      <img src="assets/img/medida-espadachina.jpg" alt="Vista previa del modelado 3D de una figura a medida sobre una grilla de escala" width="1100" height="854" loading="lazy">
+      <span class="visor__chip visor__chip--izq"><span aria-hidden="true">📐</span> Escala 1:8</span>
+      <span class="visor__chip visor__chip--der"><span aria-hidden="true">🎨</span> Resina gris + base negra</span>
+      <span class="visor__chip visor__chip--abajo"><span aria-hidden="true">⏱</span> Entrega estimada: 7 días</span>
+    </div>
+  </div>
+</section>

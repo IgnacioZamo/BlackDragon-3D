@@ -1,0 +1,146 @@
+.detalle {
+  padding-block: 2rem var(--space-xl);
+  background: var(--grad-niebla);
+}
+
+.detalle__migas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.detalle__migas a:hover {
+  color: var(--dragon);
+}
+
+.detalle__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.detalle__media {
+  position: relative;
+}
+
+.detalle__img {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--obsidiana);
+  box-shadow: 0 40px 80px -30px rgba(18, 22, 28, 0.45);
+  aspect-ratio: 565 / 522;
+}
+
+.detalle__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detalle__media .boton-favorito {
+  top: 1rem;
+  right: 1rem;
+}
+
+.detalle__etiqueta {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.detalle__info h1 {
+  margin-top: 0.5rem;
+  font-size: clamp(2.1rem, 3vw + 1rem, 3.5rem);
+}
+
+.detalle__desc {
+  margin: 1rem 0 1.5rem;
+  color: var(--texto-suave);
+  font-size: clamp(1.05rem, 0.3vw + 1rem, 1.2rem);
+}
+
+.detalle__compra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.detalle__compra .precio {
+  font-size: clamp(2rem, 2vw + 1.2rem, 2.75rem);
+}
+
+.detalle__medida {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(18, 22, 28, 0.06);
+  background: var(--blanco);
+  box-shadow: var(--sombra-card);
+  transition: transform 0.2s ease;
+}
+
+.detalle__medida:hover {
+  transform: translateY(-2px);
+}
+
+.detalle__medida strong {
+  display: block;
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.detalle__medida span span {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.detalle__no-encontrado {
+  padding-block: 4rem;
+  text-align: center;
+}
+
+.detalle__no-encontrado p {
+  margin: 1rem 0 2rem;
+  color: var(--texto-suave);
+}
+
+/* Botón flotante de WhatsApp, siempre a mano en la ficha */
+.whatsapp-flotante {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 20;
+}
+
+@media (min-width: 960px) {
+  .detalle {
+    padding-top: 3.5rem;
+  }
+
+  .detalle__grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .detalle__media {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .whatsapp-flotante {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
