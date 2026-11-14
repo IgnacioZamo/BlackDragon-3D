@@ -1,0 +1,66 @@
+.visor {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--obsidiana);
+  box-shadow: 0 40px 80px -30px rgba(18, 22, 28, 0.5);
+  /* Aire arriba y abajo para que las etiquetas no tapen la figura */
+  padding-block: 3.5rem;
+}
+
+.visor__chip {
+  position: absolute;
+  padding: 0.45rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 16, 20, 0.85);
+  color: var(--blanco);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.visor__chip--izq {
+  top: 1rem;
+  left: 1rem;
+}
+
+.visor__chip--der {
+  top: 1rem;
+  right: 1rem;
+}
+
+.visor__chip--abajo {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .visor__chip {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.1rem;
+  }
+
+  .visor__chip--izq,
+  .visor__chip--der {
+    top: 1.5rem;
+  }
+
+  .visor__chip--izq,
+  .visor__chip--abajo {
+    left: 1.5rem;
+  }
+
+  .visor__chip--der {
+    right: 1.5rem;
+  }
+
+  .visor__chip--abajo {
+    bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .visor {
+    border-radius: 40px;
+  }
+}

@@ -1,0 +1,20 @@
+.chip-punto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(224, 36, 63, 0.5);
+  border-radius: var(--radius-pill);
+  background: rgba(224, 36, 63, 0.08);
+  color: var(--texto-claro);
+  font-size: 0.95rem;
+}
+
+.chip-punto::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brasa);
+  box-shadow: 0 0 10px var(--brasa);
+}

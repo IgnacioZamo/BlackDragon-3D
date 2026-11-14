@@ -1,0 +1,43 @@
+.dato-destacado {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 300px;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  color: var(--blanco);
+  /* Líneas horizontales finas: evocan las capas de la impresión */
+  background:
+    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.07) 0 2px, transparent 2px 9px),
+    var(--grad-fuego);
+  box-shadow: 0 30px 60px -25px rgba(164, 7, 37, 0.6);
+}
+
+.dato-destacado__numero {
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: clamp(4.5rem, 5vw + 1rem, 6rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.dato-destacado__numero span {
+  font-size: 0.35em;
+  letter-spacing: -0.02em;
+}
+
+.dato-destacado__texto {
+  max-width: 22rem;
+  font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.3rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (min-width: 960px) {
+  .dato-destacado {
+    padding: 2.5rem;
+  }
+}

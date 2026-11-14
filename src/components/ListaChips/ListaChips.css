@@ -1,0 +1,13 @@
+.lista-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.lista-chips li {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(18, 22, 28, 0.12);
+  background: var(--blanco);
+  font-size: 0.95rem;
+}

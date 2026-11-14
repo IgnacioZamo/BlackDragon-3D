@@ -1,0 +1,165 @@
+.cat-card {
+  position: relative;
+  display: block;
+  min-height: 250px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(180deg, #1c222b 0%, var(--obsidiana) 100%);
+  box-shadow: var(--sombra-card);
+  color: var(--blanco);
+  transition: transform 0.3s ease;
+}
+
+.cat-card:hover {
+  transform: translateY(-4px);
+}
+
+.cat-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Las piezas chicas (castillo y dado) van arriba sin estirarse */
+.cat-card--calabozos img,
+.cat-card--rol img {
+  top: 12%;
+  height: 62%;
+  object-fit: contain;
+}
+
+.cat-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Degradado inferior para que el texto se lea sobre la imagen */
+.cat-card::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(12, 16, 20, 0.92));
+}
+
+.cat-card__cant {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: rgba(12, 16, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cat-card__flecha {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 1;
+  display: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cat-card__flecha svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cat-card__info {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+}
+
+.cat-card__info strong {
+  display: block;
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: clamp(1.1rem, 1.2vw + 0.8rem, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.cat-card__info span {
+  display: none;
+  margin-top: 0.3rem;
+  color: var(--texto-claro-suave);
+  font-size: 0.95rem;
+}
+
+@media (min-width: 960px) {
+  .cat-card {
+    min-height: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .cat-card--dragones {
+    background: radial-gradient(ellipse at 55% 40%, #6b1528, var(--obsidiana) 80%);
+  }
+
+  .cat-card--dragones img {
+    height: 88%;
+    object-fit: contain;
+  }
+
+  .cat-card--anime img {
+    top: 6%;
+    height: 72%;
+    object-fit: contain;
+  }
+
+  .cat-card--calabozos img,
+  .cat-card--rol img {
+    top: 14%;
+    height: 46%;
+  }
+
+  .cat-card__cant {
+    top: 1.75rem;
+    left: 1.75rem;
+    font-size: 0.8rem;
+  }
+
+  .cat-card__flecha {
+    display: grid;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .cat-card__info {
+    left: 2rem;
+    right: 2rem;
+    bottom: 1.75rem;
+  }
+
+  .cat-card__info span {
+    display: block;
+  }
+
+  /* Las tarjetas angostas usan un titular más chico */
+  .cat-card--anime .cat-card__info,
+  .cat-card--calabozos .cat-card__info,
+  .cat-card--rol .cat-card__info {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .cat-card--anime strong,
+  .cat-card--calabozos strong,
+  .cat-card--rol strong {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,50 @@
+/* =========================================================
+   Hoja principal: importa todos los estilos en orden.
+   1) globales  2) componentes  3) secciones  4) páginas
+   Las secciones van después de los componentes para poder
+   ajustarlos según dónde se usan (p. ej. la grilla de la galería).
+   Al crear un componente o una sección nueva, sumar su CSS acá.
+   ========================================================= */
+
+/* Globales */
+@import url("./variables.css");
+@import url("./base.css");
+
+/* Componentes */
+@import url("../components/Boton/Boton.css");
+@import url("../components/ChipPunto/ChipPunto.css");
+@import url("../components/Marca/Marca.css");
+@import url("../components/CabeceraSeccion/CabeceraSeccion.css");
+@import url("../components/TarjetaFlotante/TarjetaFlotante.css");
+@import url("../components/Cinta/Cinta.css");
+@import url("../components/IconoRojo/IconoRojo.css");
+@import url("../components/TarjetaCategoria/TarjetaCategoria.css");
+@import url("../components/FiltrosCategoria/FiltrosCategoria.css");
+@import url("../components/Badge/Badge.css");
+@import url("../components/BotonFavorito/BotonFavorito.css");
+@import url("../components/Precio/Precio.css");
+@import url("../components/TarjetaProducto/TarjetaProducto.css");
+@import url("../components/ItemGaleria/ItemGaleria.css");
+@import url("../components/Paso/Paso.css");
+@import url("../components/VisorModelo/VisorModelo.css");
+@import url("../components/Beneficio/Beneficio.css");
+@import url("../components/DatoDestacado/DatoDestacado.css");
+@import url("../components/TarjetaTestimonio/TarjetaTestimonio.css");
+@import url("../components/Miniaturas/Miniaturas.css");
+@import url("../components/ListaChips/ListaChips.css");
+
+/* Secciones */
+@import url("../sections/Header/Header.css");
+@import url("../sections/Hero/Hero.css");
+@import url("../sections/Categorias/Categorias.css");
+@import url("../sections/Productos/Productos.css");
+@import url("../sections/Galeria/Galeria.css");
+@import url("../sections/PedidosMedida/PedidosMedida.css");
+@import url("../sections/PorQue/PorQue.css");
+@import url("../sections/Testimonios/Testimonios.css");
+@import url("../sections/Cta/Cta.css");
+@import url("../sections/Footer/Footer.css");
+@import url("../sections/DetalleProducto/DetalleProducto.css");
+
+/* Páginas */
+@import url("../pages/PaginaInicio/PaginaInicio.css");

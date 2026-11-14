@@ -1,0 +1,30 @@
+.badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge--rojo {
+  background: var(--grad-fuego);
+  color: var(--blanco);
+}
+
+.badge--blanco {
+  background: var(--blanco);
+  color: var(--texto);
+}
+
+@media (min-width: 640px) {
+  .badge {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,130 @@
+.hero {
+  display: grid;
+  gap: 2rem;
+  padding-block: 2.5rem 3rem;
+}
+
+.hero__titulo {
+  margin-top: 1.5rem;
+  font-size: var(--fs-hero);
+  color: var(--texto-claro);
+  line-height: 1.02;
+}
+
+.hero__grad {
+  background: var(--grad-titulo-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Mantiene "friki, impreso" en una línea, como en el diseño */
+@media (min-width: 480px) {
+  .hero__grad {
+    white-space: nowrap;
+  }
+}
+
+.hero__bajada {
+  max-width: 34rem;
+  margin-top: 1.5rem;
+  color: #c3c7ce;
+  font-size: clamp(1.05rem, 0.6vw + 0.95rem, 1.35rem);
+  line-height: 1.65;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero__acciones .btn {
+  flex: 1 1 100%;
+}
+
+.hero__stats {
+  display: flex;
+  gap: clamp(1.25rem, 5vw, 4rem);
+  margin: 2.5rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero__stats dt {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw + 0.6rem, 2.6rem);
+  letter-spacing: -0.02em;
+  color: var(--blanco);
+  white-space: nowrap;
+}
+
+.hero__stats dd {
+  margin: 0.25rem 0 0;
+  color: var(--texto-claro-suave);
+  font-size: clamp(0.8rem, 0.4vw + 0.7rem, 1rem);
+}
+
+.hero__arte {
+  position: relative;
+  aspect-ratio: 1 / 0.9;
+  display: grid;
+  place-items: center;
+}
+
+/* Anillos concéntricos detrás de la figura */
+.hero__anillos {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 96%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.hero__anillos::after {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 36, 63, 0.25);
+}
+
+.hero__img {
+  position: relative;
+  width: 100%;
+  /* Funde los bordes del recorte con el fondo del hero */
+  -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 88%);
+  mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 88%);
+  animation: flotar 7s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero__acciones .btn {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 3rem;
+    padding-block: 4.5rem 5rem;
+  }
+
+  .hero__arte {
+    aspect-ratio: 1;
+  }
+}

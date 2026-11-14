@@ -1,0 +1,13 @@
+.precio {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .precio {
+    font-size: 1.75rem;
+  }
+}

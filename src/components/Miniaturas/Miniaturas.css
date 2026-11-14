@@ -1,0 +1,27 @@
+.miniaturas {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.miniatura {
+  width: 84px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--obsidiana);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.miniatura[aria-pressed="true"] {
+  border-color: var(--brasa);
+  opacity: 1;
+}

@@ -1,0 +1,40 @@
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(18, 22, 28, 0.06);
+  background: var(--blanco);
+  box-shadow: var(--sombra-card);
+}
+
+.paso h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.paso p {
+  margin-top: 0.25rem;
+  color: var(--texto-suave);
+  font-size: 0.98rem;
+}
+
+@media (min-width: 640px) {
+  .paso {
+    padding: 1.6rem 2rem;
+    gap: 1.75rem;
+    border-radius: 28px;
+  }
+
+  .paso h3 {
+    font-size: 1.4rem;
+  }
+
+  .paso .icono-rojo {
+    width: 64px;
+    height: 64px;
+    font-size: 1.4rem;
+  }
+}
