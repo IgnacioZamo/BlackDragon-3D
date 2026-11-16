@@ -36,8 +36,8 @@
   padding: 0.4rem 0.4rem 0.4rem 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-pill);
-  /* Sin backdrop-filter en celular: haría que el menú a pantalla completa
-     (position: fixed) quede encerrado dentro de la barra */
+  /* Sin backdrop-filter debajo de 1200px: haría que el panel y el fondo del menú
+     (position: fixed) queden encerrados dentro de la barra */
   background: rgba(26, 32, 40, 0.92);
 }
 
@@ -79,19 +79,52 @@
   display: none;
 }
 
-/* ---------- Botón de menú (hamburguesa ↔ cruz) ---------- */
-.nav__toggle .icono-cerrar,
-.nav__toggle[aria-expanded="true"] .icono-menu {
+/* ---------- Panel del menú abierto (celular y tablet) ----------
+   Es una tarjeta con su propio botón X. Detrás va .nav__fondo:
+   un clic fuera del panel lo cierra (ver header.js). */
+.nav__cerrar-item {
   display: none;
 }
 
-.nav__toggle[aria-expanded="true"] .icono-cerrar {
-  display: block;
+.nav__links.abierto .nav__cerrar-item {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.25rem;
 }
 
-/* ---------- Enlaces del menú abierto (celular y tablet) ---------- */
+.nav__cerrar {
+  width: 40px;
+  height: 40px;
+}
+
+.nav__fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(6, 8, 11, 0.6);
+  animation: menu-aparecer 0.2s ease;
+}
+
+.nav__fondo[hidden] {
+  display: none;
+}
+
+.nav .nav__links.abierto {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: var(--carbon);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+  animation: menu-aparecer 0.2s ease;
+}
+
 .nav__links.abierto a:not(.btn) {
   display: block;
+  padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
   color: #d5d8de;
   text-align: center;
@@ -103,45 +136,38 @@
   color: var(--blanco);
 }
 
+.nav__links.abierto .nav__cta-movil {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .nav__cta-movil .btn {
   width: 100%;
 }
 
-/* ---------- Celular: menú a pantalla completa ---------- */
+@keyframes menu-aparecer {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- Celular: panel arriba de la pantalla ---------- */
 @media (max-width: 767px) {
   .nav .nav__links.abierto {
     position: fixed;
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 5rem 1.5rem 2rem;
-    background:
-      radial-gradient(ellipse 80% 50% at 50% 100%, rgba(164, 7, 37, 0.25), transparent 70%),
-      var(--obsidiana);
-    animation: menu-aparecer 0.2s ease;
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    max-height: calc(100dvh - 1.5rem);
+    overflow-y: auto;
   }
 
   .nav__links.abierto a:not(.btn) {
-    padding: 0.9rem 1rem;
     font-family: var(--font-titulo);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     letter-spacing: -0.01em;
-  }
-
-  .nav__links.abierto .nav__cta-movil {
-    margin-top: 1rem;
-  }
-
-  /* La cruz queda fija arriba a la derecha, aunque se haya bajado en la página */
-  .nav__toggle[aria-expanded="true"] {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 2;
   }
 
   /* Con el menú abierto la página de atrás no se desplaza */
@@ -151,20 +177,12 @@
   }
 }
 
-@keyframes menu-aparecer {
-  from {
-    opacity: 0;
-  }
-}
-
-/* ---------- Tablet: menú desplegable centrado bajo la barra ---------- */
+/* ---------- Tablet: panel desplegable centrado bajo la barra ---------- */
 @media (min-width: 768px) and (max-width: 1199px) {
   .nav {
     min-height: 68px;
     margin-top: 1.25rem;
     padding: 0.5rem 0.5rem 0.5rem 0.6rem;
-    backdrop-filter: blur(12px);
-    background: rgba(26, 32, 40, 0.65);
   }
 
   .nav .marca__logo {
@@ -181,30 +199,21 @@
     position: absolute;
     top: calc(100% + 0.5rem);
     left: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
     width: 26rem;
-    padding: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-md);
-    background: var(--carbon);
-    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
     transform: translateX(-50%);
   }
 
   .nav__links.abierto a:not(.btn) {
-    padding: 0.85rem 1rem;
     font-size: 1.05rem;
-  }
-
-  .nav__links.abierto .nav__cta-movil {
-    margin-top: 0.25rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
 
+/* En escritorio no hay panel ni fondo */
+@media (min-width: 1200px) {
+  .nav__fondo {
+    display: none;
+  }
+}
 /* ---------- Escritorio ---------- */
 @media (min-width: 1200px) {
   .header {

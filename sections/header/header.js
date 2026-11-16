@@ -1,4 +1,6 @@
-/* Menú hamburguesa de la navegación (celular y tablet) */
+/* Menú hamburguesa de la navegación (celular y tablet).
+   Se cierra con: la X del panel, un clic fuera del panel,
+   la tecla Escape o al elegir un enlace. */
 (function () {
   "use strict";
 
@@ -6,7 +8,8 @@
   const menu = document.getElementById("menu");
   if (!toggle || !menu) return;
 
-  const etiqueta = toggle.querySelector(".sr-only");
+  const botonCerrar = menu.querySelector(".nav__cerrar");
+  const fondo = document.querySelector(".nav__fondo");
 
   // Marca la página actual: Productos (y la ficha de un producto) o Inicio en la landing
   const pagina = window.location.pathname.split("/").pop() || "index.html";
@@ -17,30 +20,45 @@
     if (esActual) enlace.setAttribute("aria-current", "page");
   });
 
-  const abrirOCerrar = (abrir) => {
-    menu.classList.toggle("abierto", abrir);
-    toggle.setAttribute("aria-expanded", String(abrir));
-    etiqueta.textContent = abrir ? "Cerrar menú" : "Abrir menú";
-    // En celular el menú tapa toda la pantalla: se frena el scroll de atrás (ver header.css)
-    document.documentElement.classList.toggle("menu-abierto", abrir);
-  };
+  const estaAbierto = () => menu.classList.contains("abierto");
 
-  toggle.addEventListener("click", () => abrirOCerrar(!menu.classList.contains("abierto")));
+  function abrir() {
+    menu.classList.add("abierto");
+    fondo.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+    // En celular se frena el scroll de la página de atrás (ver header.css)
+    document.documentElement.classList.add("menu-abierto");
+    botonCerrar.focus();
+  }
 
-  // Si se agranda la ventana a escritorio con el menú abierto, se cierra
-  window.matchMedia("(min-width: 1200px)").addEventListener("change", (e) => {
-    if (e.matches) abrirOCerrar(false);
+  function cerrar({ devolverFoco = false } = {}) {
+    if (!estaAbierto()) return;
+    menu.classList.remove("abierto");
+    fondo.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("menu-abierto");
+    if (devolverFoco) toggle.focus();
+  }
+
+  toggle.addEventListener("click", () => (estaAbierto() ? cerrar() : abrir()));
+  botonCerrar.addEventListener("click", () => cerrar({ devolverFoco: true }));
+
+  // Clic fuera del panel: en el fondo oscuro o en cualquier otra parte de la página
+  document.addEventListener("click", (e) => {
+    if (estaAbierto() && !menu.contains(e.target) && !toggle.contains(e.target)) cerrar();
   });
 
   // Al elegir una sección el menú se cierra para no tapar el contenido
   menu.addEventListener("click", (e) => {
-    if (e.target.closest("a")) abrirOCerrar(false);
+    if (e.target.closest("a")) cerrar();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && menu.classList.contains("abierto")) {
-      abrirOCerrar(false);
-      toggle.focus();
-    }
+    if (e.key === "Escape") cerrar({ devolverFoco: true });
+  });
+
+  // Si se agranda la ventana a escritorio con el menú abierto, se cierra
+  window.matchMedia("(min-width: 1200px)").addEventListener("change", (e) => {
+    if (e.matches) cerrar();
   });
 })();
