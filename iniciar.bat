@@ -13,6 +13,11 @@ if errorlevel 1 (
   exit /b 1
 )
 
+rem Suma al catalogo las fotos nuevas de assets\img\productos y corrige rutas
+echo Revisando productos...
+python scripts\actualizar_productos.py
+echo.
+
 rem Abre el navegador un segundo despues, cuando el servidor ya esta escuchando
 start "" powershell -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Seconds 1; Start-Process 'http://localhost:5173/'"
 

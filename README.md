@@ -7,7 +7,11 @@ Landing page y ficha de producto para **Black Dragon 3D**, un taller de impresi�
 ```
 BlackDragon/
 ├── index.html                  # Página principal: carga sections/principal.html
+├── productos.html              # Productos: catálogo completo con buscador
 ├── producto.html               # Ficha de producto: carga header, producto y footer
+├── iniciar.bat                 # Abre la web (y suma las fotos nuevas al JSON)
+├── actualizar-productos.bat    # Solo suma las fotos nuevas al JSON
+├── scripts/actualizar_productos.py
 ├── sections/
 │   ├── principal.html          # HTML general de la landing: qué secciones van y en qué orden
 │   ├── header/                 # header.html + header.css + header.js (menú móvil)
@@ -19,7 +23,9 @@ BlackDragon/
 │   ├── testimonios/            # testimonios.html + testimonios.css
 │   ├── contacto/               # contacto.html + contacto.css (llamado a WhatsApp)
 │   ├── footer/                 # footer.html + footer.css
-│   └── producto/               # producto.html + producto.css + producto.js (ficha)
+│   ├── productos/              # productos.html + .css + .js (buscador y filtros)
+│   ├── producto/               # producto.html + producto.css + producto.js (ficha)
+│   └── componentes/tarjeta-producto/  # Molde de tarjeta que usan catálogo y Productos
 ├── data/
 │   └── productos.json          # Productos: nombre, precio, descripción, imágenes…
 ├── css/
@@ -80,11 +86,21 @@ Cada producto tiene esta forma:
 - `id`: identificador sin espacios ni tildes. Se usa en el enlace a la ficha (`producto.html?id=dragon-ancestral`).
 - `filtros`: botones de filtro donde aparece (`dragones`, `anime`, `calabozos`, `rol`, `packs`).
 - `etiqueta`: cartel sobre la foto; `color` puede ser `rojo` o `blanco`. Se puede borrar si el producto no lleva.
-- `precio`: número sin puntos ni signo; la página lo muestra como `$ 38.900`.
+- `precio`: número sin puntos ni signo; la página lo muestra como `$ 38.900`. Con `null` muestra "Consultar precio".
+- `destacado`: `true` para que aparezca en "Piezas destacadas" de la landing (se muestran hasta 4). Todos los productos se ven en `productos.html`.
 - `resumen`: línea corta de la tarjeta. `descripcion`: texto de la ficha.
 - `imagenes`: la primera es la de la tarjeta; todas se ven en la ficha. Para cambiarlas, poner los archivos en `assets/img/productos/` y actualizar `src`. `alt` describe la foto para quienes no la ven.
 
-Los productos aparecen en el catálogo en el mismo orden que en el JSON.
+Los productos aparecen en el catálogo en el mismo orden que en el JSON. En `productos.html`, los botones de filtro se arman con el **primer** valor de `filtros` de cada producto, y el buscador busca en nombre, categoría, resumen y todos los `filtros`.
+
+### Sumar productos nuevos
+
+Copiar la foto en `assets/img/productos/` y abrir `iniciar.bat` (o `actualizar-productos.bat`). El script `scripts/actualizar_productos.py`:
+
+- agrega al JSON un producto por cada foto nueva, con los textos en `[PENDIENTE]` para completar;
+- no toca los productos que ya están;
+- corrige rutas mal escritas (por ejemplo, sin la extensión `.jpeg`);
+- quita del JSON los productos cuya foto se borró.
 
 ## Tecnologías y stack
 

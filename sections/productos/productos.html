@@ -1,0 +1,41 @@
+<!-- ===================== PRODUCTOS: catálogo completo con buscador =====================
+     Las tarjetas y los botones de filtro se arman con data/productos.json (productos.js). -->
+<link rel="stylesheet" href="sections/productos/productos.css">
+<div data-incluir="sections/componentes/tarjeta-producto/tarjeta-producto.html"></div>
+
+<main id="contenido" class="catalogo-completo">
+  <section class="seccion" aria-labelledby="titulo-catalogo-completo">
+    <div class="container">
+      <nav class="catalogo-completo__migas" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Productos</span>
+      </nav>
+
+      <p class="eyebrow">Catálogo</p>
+      <h1 id="titulo-catalogo-completo">Todos los <span class="grad">productos</span></h1>
+
+      <div class="buscador" role="search">
+        <label class="sr-only" for="buscar">Buscar productos</label>
+        <svg class="buscador__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="buscador__campo" type="search" id="buscar" placeholder="Buscar por nombre, serie o personaje…" autocomplete="off">
+      </div>
+
+      <!-- Los botones se crean con el primer valor de "filtros" de cada producto -->
+      <div class="filtros" id="filtros-productos" role="group" aria-label="Filtrar por categoría">
+        <button class="filtro activo" type="button" data-filtro="todo" aria-pressed="true">Todo</button>
+      </div>
+
+      <p class="catalogo-completo__cantidad" id="cantidad-productos" aria-live="polite"></p>
+
+      <ul class="productos__grid catalogo-completo__grid" id="lista-productos"></ul>
+
+      <p class="catalogo-completo__vacio" id="sin-resultados" hidden>
+        No encontramos productos con esa búsqueda. ¿Buscás algo en particular?
+        <a href="index.html#a-medida">Lo hacemos a medida</a>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<script src="sections/productos/productos.js"></script>

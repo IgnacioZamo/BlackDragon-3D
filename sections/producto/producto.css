@@ -80,7 +80,8 @@
   overflow: hidden;
   background: var(--obsidiana);
   box-shadow: 0 40px 80px -30px rgba(18, 22, 28, 0.45);
-  aspect-ratio: 565 / 522;
+  /* Vertical, como las fotos de las figuras */
+  aspect-ratio: 3 / 4;
 }
 
 .detalle__img img {

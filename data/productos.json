@@ -1,63 +1,222 @@
 {
   "productos": [
     {
-      "id": "dragon-ancestral",
-      "nombre": "Dragón Ancestral",
-      "categoria": "Dragones · Resina",
-      "filtros": ["dragones"],
-      "etiqueta": { "texto": "Más vendido", "color": "rojo" },
-      "precio": 38900,
-      "resumen": "Alas desplegables · 28 cm · Base incluida",
-      "descripcion": "Alas desplegables y base incluida. Acabado listo para pintar.",
-      "caracteristicas": ["28 cm", "Resina", "0,05 mm"],
+      "id": "goku-ssj",
+      "nombre": "Goku Super Saiyajin",
+      "categoria": "Anime · Dragon Ball",
+      "filtros": [
+        "anime",
+        "dragon ball",
+        "goku",
+        "saiyajin"
+      ],
+      "etiqueta": {
+        "texto": "Más vendido",
+        "color": "rojo"
+      },
+      "destacado": true,
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
       "imagenes": [
-        { "src": "assets/img/productos/dragon-ancestral-1.jpg", "alt": "Dragón Ancestral, figura de dragón con alas rojas desplegadas" },
-        { "src": "assets/img/productos/dragon-ancestral-2.jpg", "alt": "Detalle de la cabeza del Dragón Ancestral" }
+        {
+          "src": "assets/img/productos/Figura3D-Goku_ssj.jpeg",
+          "alt": "Figura de Goku Super Saiyajin con traje naranja sobre base dorada"
+        }
       ]
     },
     {
-      "id": "hechicero-encapuchado",
-      "nombre": "Hechicero Encapuchado",
-      "categoria": "Rol · Miniatura",
-      "filtros": ["rol"],
-      "etiqueta": { "texto": "Nuevo", "color": "blanco" },
-      "precio": 6500,
-      "resumen": "Miniatura 32 mm · Lista para pintar",
-      "descripcion": "Miniatura 32 mm · Lista para pintar.",
-      "caracteristicas": ["32 mm", "Miniatura"],
+      "id": "zoro",
+      "nombre": "Zoro",
+      "categoria": "Anime · One Piece",
+      "filtros": [
+        "anime",
+        "one piece",
+        "zoro",
+        "espadas"
+      ],
+      "etiqueta": {
+        "texto": "Nuevo",
+        "color": "blanco"
+      },
+      "destacado": true,
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
       "imagenes": [
-        { "src": "assets/img/productos/hechicero-encapuchado-1.jpg", "alt": "Hechicero Encapuchado, miniatura con capucha roja y báculo luminoso" },
-        { "src": "assets/img/productos/hechicero-encapuchado-2.jpg", "alt": "Hechicero Encapuchado sobre fondo gris" }
+        {
+          "src": "assets/img/productos/Figura3D-Zoro.jpeg",
+          "alt": "Figura de Zoro con tres espadas sobre base de madera con calavera"
+        }
       ]
     },
     {
-      "id": "torre-del-calabozo",
-      "nombre": "Torre del Calabozo",
-      "categoria": "Calabozos · PLA",
-      "filtros": ["calabozos", "packs"],
-      "etiqueta": { "texto": "Pack", "color": "rojo" },
-      "precio": 24200,
-      "resumen": "Set modular 12 piezas · Encastre sin pegamento",
-      "descripcion": "Set modular 12 piezas · Encastre sin pegamento.",
-      "caracteristicas": ["12 piezas", "PLA"],
+      "id": "mago-oscuro",
+      "nombre": "Mago Oscuro",
+      "categoria": "Anime · Yu-Gi-Oh!",
+      "filtros": [
+        "anime",
+        "yu gi oh",
+        "mago",
+        "mago oscuro"
+      ],
+      "destacado": true,
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
       "imagenes": [
-        { "src": "assets/img/productos/torre-del-calabozo-1.jpg", "alt": "Torre del Calabozo, castillo modular blanco con techos rojos" },
-        { "src": "assets/img/productos/torre-del-calabozo-2.jpg", "alt": "Torre modular vista de frente" }
+        {
+          "src": "assets/img/productos/Figura3D-Mago_Oscuro.jpeg",
+          "alt": "Figura del Mago Oscuro con túnica violeta y báculo verde"
+        }
       ]
     },
     {
-      "id": "espadachina-carmesi",
-      "nombre": "Espadachina Carmesí",
-      "categoria": "Anime · Resina",
-      "filtros": ["anime"],
-      "etiqueta": { "texto": "Personalizable", "color": "blanco" },
-      "precio": 31500,
-      "resumen": "Figura 22 cm · Elegí colores y pose",
-      "descripcion": "Figura 22 cm · Elegí colores y pose.",
-      "caracteristicas": ["22 cm", "Resina"],
+      "id": "escanor",
+      "nombre": "Escanor",
+      "categoria": "Anime · Nanatsu no Taizai",
+      "filtros": [
+        "anime",
+        "nanatsu no taizai",
+        "seven deadly sins",
+        "escanor"
+      ],
+      "destacado": true,
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
       "imagenes": [
-        { "src": "assets/img/productos/espadachina-carmesi-1.jpg", "alt": "Espadachina Carmesí, figura anime de pelo rojo con espada" },
-        { "src": "assets/img/productos/espadachina-carmesi-2.jpg", "alt": "Espadachina Carmesí sobre fondo rojo" }
+        {
+          "src": "assets/img/productos/Figura3D-Escanor.jpeg",
+          "alt": "Figura de Escanor con su hacha sobre una base con su nombre"
+        }
+      ]
+    },
+    {
+      "id": "hisoka",
+      "nombre": "Hisoka",
+      "categoria": "Anime · Hunter x Hunter",
+      "filtros": [
+        "anime",
+        "hunter x hunter",
+        "hisoka"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/Figura3D-Hisoka.jpeg",
+          "alt": "Figura de Hisoka con cartas en la mano y efecto rosa"
+        }
+      ]
+    },
+    {
+      "id": "super-bu",
+      "nombre": "Super Bu",
+      "categoria": "Anime · Dragon Ball",
+      "filtros": [
+        "anime",
+        "dragon ball",
+        "majin bu",
+        "super bu"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/Figura3D-SuperBu.jpeg",
+          "alt": "Figura de Super Bu sosteniendo una esfera de energía"
+        }
+      ]
+    },
+    {
+      "id": "pretty-derby",
+      "nombre": "Pretty Derby",
+      "categoria": "Anime · Uma Musume",
+      "filtros": [
+        "anime",
+        "uma musume",
+        "pretty derby"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/Figura3D-PrettyDerby.jpeg",
+          "alt": "Figura de personaje de Pretty Derby con uniforme rojo sobre base de pasto"
+        }
+      ]
+    },
+    {
+      "id": "anakin",
+      "nombre": "Anakin Skywalker",
+      "categoria": "Películas · Star Wars",
+      "filtros": [
+        "peliculas",
+        "star wars",
+        "anakin",
+        "jedi"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/Figura3D-Anakin.jpeg",
+          "alt": "Figura de Anakin Skywalker con sable de luz azul"
+        }
+      ]
+    },
+    {
+      "id": "superman",
+      "nombre": "Superman",
+      "categoria": "Cómics · DC",
+      "filtros": [
+        "comics",
+        "dc",
+        "superman",
+        "superheroes"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/Figura3D-Superman.jpeg",
+          "alt": "Figura de Superman con capa roja sobre base dorada"
+        }
+      ]
+    },
+    {
+      "id": "rockera",
+      "nombre": "Rockera",
+      "categoria": "Figuras originales",
+      "filtros": [
+        "originales",
+        "rockera",
+        "musica"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/Figura3D-Rockera.jpeg",
+          "alt": "Figura de una cantante rockera con micrófono y parlante"
+        }
       ]
     }
   ]

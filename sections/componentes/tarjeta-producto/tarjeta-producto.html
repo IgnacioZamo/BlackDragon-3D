@@ -1,0 +1,29 @@
+<!-- ===================== COMPONENTE: tarjeta de producto =====================
+     Molde que usan el catálogo de la landing y la página Productos.
+     js/comun.js (BD.crearTarjeta) lo copia y completa cada data-campo con data/productos.json. -->
+<link rel="stylesheet" href="sections/componentes/tarjeta-producto/tarjeta-producto.css">
+
+<template id="plantilla-producto">
+  <li class="prod-card reveal">
+    <div class="prod-card__media">
+      <img data-campo="imagen" src="" alt="" width="1200" height="1600" loading="lazy">
+      <span class="badge" data-campo="etiqueta"></span>
+      <button class="boton-favorito btn-icono" type="button" aria-pressed="false" data-campo="favorito">
+        <span class="sr-only">Guardar en favoritos</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+      </button>
+    </div>
+    <div class="prod-card__info">
+      <p class="prod-card__cat" data-campo="categoria"></p>
+      <h3><a class="prod-card__link" data-campo="nombre" href=""></a></h3>
+      <p class="prod-card__desc" data-campo="resumen"></p>
+      <div class="prod-card__pie">
+        <p class="precio" data-campo="precio"></p>
+        <a class="prod-card__mas" data-campo="pedir" href="#" target="_blank" rel="noopener">
+          <span class="sr-only">Pedir por WhatsApp</span>
+          <span aria-hidden="true">+</span>
+        </a>
+      </div>
+    </div>
+  </li>
+</template>

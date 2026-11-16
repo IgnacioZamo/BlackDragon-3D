@@ -25,7 +25,9 @@ const BD = (function () {
     return pedidoProductos;
   }
 
-  const formatearPrecio = (valor) => "$ " + Number(valor).toLocaleString("es-AR");
+  // Sin precio en el JSON ("precio": null) se muestra "Consultar precio"
+  const tienePrecio = (valor) => typeof valor === "number" && valor > 0;
+  const formatearPrecio = (valor) => (tienePrecio(valor) ? "$ " + valor.toLocaleString("es-AR") : "Consultar precio");
 
   /* ---------- WhatsApp ---------- */
   function linkWhatsApp(mensaje = "¡Hola Black Dragon! Quiero pedir un presupuesto.") {
@@ -34,7 +36,47 @@ const BD = (function () {
   }
 
   const linkWhatsAppProducto = (p) =>
-    linkWhatsApp(`¡Hola Black Dragon! Quiero pedir: ${p.nombre} (${formatearPrecio(p.precio)}).`);
+    linkWhatsApp(
+      tienePrecio(p.precio)
+        ? `¡Hola Black Dragon! Quiero pedir: ${p.nombre} (${formatearPrecio(p.precio)}).`
+        : `¡Hola Black Dragon! Quiero consultar por: ${p.nombre}.`
+    );
+
+  /* ---------- Tarjeta de producto ---------- */
+  // Copia el molde #plantilla-producto (sections/componentes/tarjeta-producto) y lo completa
+  function crearTarjeta(p) {
+    const molde = document.getElementById("plantilla-producto");
+    const tarjeta = molde.content.firstElementChild.cloneNode(true);
+    const campo = (nombre) => tarjeta.querySelector(`[data-campo="${nombre}"]`);
+    const imagen = (p.imagenes || [])[0] || { src: "", alt: "" };
+
+    tarjeta.dataset.id = p.id;
+    campo("imagen").src = imagen.src;
+    campo("imagen").alt = imagen.alt || p.nombre;
+
+    // La etiqueta ("Más vendido", "Nuevo"...) es opcional
+    if (p.etiqueta && p.etiqueta.texto) {
+      campo("etiqueta").textContent = p.etiqueta.texto;
+      campo("etiqueta").classList.add(`badge--${p.etiqueta.color || "rojo"}`);
+    } else {
+      campo("etiqueta").remove();
+    }
+
+    campo("favorito").dataset.fav = p.id;
+    campo("favorito").querySelector(".sr-only").textContent = `Guardar ${p.nombre} en favoritos`;
+
+    campo("categoria").textContent = p.categoria || "";
+    campo("nombre").textContent = p.nombre;
+    campo("nombre").href = `producto.html?id=${encodeURIComponent(p.id)}`;
+    campo("resumen").textContent = p.resumen || "";
+    campo("precio").textContent = formatearPrecio(p.precio);
+
+    campo("pedir").href = linkWhatsAppProducto(p);
+    campo("pedir").querySelector(".sr-only").textContent = `Pedir ${p.nombre} por WhatsApp`;
+
+    marcarFavoritos(tarjeta);
+    return tarjeta;
+  }
 
   // Completa los botones marcados con data-whatsapp
   function conectarWhatsApp(raiz) {
@@ -53,7 +95,8 @@ const BD = (function () {
   })();
 
   function marcarFavoritos(raiz) {
-    raiz.querySelectorAll("[data-fav]").forEach((b) => b.setAttribute("aria-pressed", String(favoritos.has(b.dataset.fav))));
+    const botones = raiz.matches && raiz.matches("[data-fav]") ? [raiz] : raiz.querySelectorAll("[data-fav]");
+    botones.forEach((b) => b.setAttribute("aria-pressed", String(favoritos.has(b.dataset.fav))));
   }
 
   // Un solo escuchador para todos los corazones, incluso los que se agregan después
@@ -95,5 +138,5 @@ const BD = (function () {
     observarReveal(document);
   });
 
-  return { cargarProductos, formatearPrecio, linkWhatsAppProducto, conectarWhatsApp, marcarFavoritos, observarReveal };
+  return { cargarProductos, formatearPrecio, linkWhatsAppProducto, conectarWhatsApp, marcarFavoritos, observarReveal, crearTarjeta };
 })();

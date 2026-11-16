@@ -1,0 +1,92 @@
+/* =========================================================
+   Productos: página con el catálogo completo y buscador
+   ========================================================= */
+
+.catalogo-completo {
+  min-height: 70vh;
+  padding-bottom: var(--space-xl);
+  background: var(--grad-niebla);
+}
+
+.catalogo-completo .seccion {
+  padding-top: 2rem;
+}
+
+.catalogo-completo__migas {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.catalogo-completo__migas a:hover {
+  color: var(--dragon);
+}
+
+.catalogo-completo h1 {
+  font-size: var(--fs-h2);
+}
+
+/* ---------- Buscador ---------- */
+.buscador {
+  position: relative;
+  max-width: 36rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.buscador__icono {
+  position: absolute;
+  top: 50%;
+  left: 1.25rem;
+  width: 20px;
+  height: 20px;
+  color: var(--texto-suave);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.buscador__campo {
+  width: 100%;
+  min-height: 56px;
+  padding: 0.9rem 1.25rem 0.9rem 3.25rem;
+  border: 1px solid rgba(18, 22, 28, 0.12);
+  border-radius: var(--radius-pill);
+  background: var(--blanco);
+  color: var(--texto);
+  font: inherit;
+  box-shadow: var(--sombra-card);
+}
+
+.buscador__campo::placeholder {
+  color: #8a9099;
+}
+
+.buscador__campo:focus-visible {
+  outline: 3px solid var(--brasa);
+  outline-offset: 2px;
+}
+
+.catalogo-completo__cantidad {
+  margin-bottom: 1.25rem;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.catalogo-completo__vacio {
+  padding: 3rem 0;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+.catalogo-completo__vacio a {
+  color: var(--dragon);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (min-width: 960px) {
+  .catalogo-completo .seccion {
+    padding-top: 3.5rem;
+  }
+}
