@@ -1,5 +1,7 @@
 /* Productos: muestra todo data/productos.json con buscador y filtros.
-   - Botones de filtro: el primer valor de "filtros" de cada producto (anime, películas…).
+   - Botones de filtro: primero las 4 categorías del catálogo (BD.CATEGORIAS en js/comun.js),
+     siempre, aunque todavía no tengan productos. Después, los grupos del JSON que no entran
+     en ninguna categoría (primer valor de "filtros", por ejemplo "peliculas").
    - Buscador: busca en nombre, categoría, resumen y todos los "filtros".
    - Acepta ?filtro=anime y ?q=goku en la URL (los usan los enlaces de la landing). */
 (function () {
@@ -13,31 +15,39 @@
   const cantidad = document.getElementById("cantidad-productos");
   const sinResultados = document.getElementById("sin-resultados");
 
-  // Nombre lindo para los botones; si un filtro no está acá se muestra con mayúscula inicial
-  const ETIQUETAS = { peliculas: "Películas", comics: "Cómics", originales: "Originales" };
+  // Nombre lindo para los grupos extra; si no está acá se muestra con mayúscula inicial
+  const ETIQUETAS = { peliculas: "Películas", originales: "Originales" };
   const etiquetaFiltro = (f) => ETIQUETAS[f] || f.charAt(0).toUpperCase() + f.slice(1);
 
-  // Sin tildes ni mayúsculas, para que "pelicula" encuentre "Películas"
-  const normalizar = (texto) =>
-    String(texto || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "");
+  const { normalizar } = BD;
 
   const parametros = new URLSearchParams(window.location.search);
   const estado = { filtro: normalizar(parametros.get("filtro")) || "todo", busqueda: parametros.get("q") || "" };
+  // ?filtro=comics (o cualquier etiqueta de una categoría) activa el botón de esa categoría
+  const categoriaPorEtiqueta = BD.CATEGORIAS.find((c) => c.etiquetas.includes(estado.filtro));
+  if (categoriaPorEtiqueta) estado.filtro = categoriaPorEtiqueta.id;
+
+  const mensajeVacio = sinResultados.querySelector(".catalogo-completo__mensaje");
   let tarjetas = [];
 
+  function agregarBoton(filtro, texto) {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "filtro";
+    boton.dataset.filtro = filtro;
+    boton.textContent = texto;
+    contenedorFiltros.appendChild(boton);
+  }
+
   function crearBotonesFiltro(productos) {
-    const principales = [...new Set(productos.map((p) => normalizar((p.filtros || [])[0])).filter(Boolean))];
-    principales.forEach((filtro) => {
-      const boton = document.createElement("button");
-      boton.type = "button";
-      boton.className = "filtro";
-      boton.dataset.filtro = filtro;
-      boton.textContent = etiquetaFiltro(filtro);
-      contenedorFiltros.appendChild(boton);
-    });
+    BD.CATEGORIAS.forEach((c) => agregarBoton(c.id, c.nombre));
+
+    // Grupos que no son una categoría, para que ningún producto quede sin botón
+    const extras = productos
+      .filter((p) => !BD.CATEGORIAS.some((c) => BD.perteneceA(p, c.id)))
+      .map((p) => normalizar((p.filtros || [])[0]))
+      .filter(Boolean);
+    [...new Set(extras)].forEach((filtro) => agregarBoton(filtro, etiquetaFiltro(filtro)));
 
     contenedorFiltros.addEventListener("click", (e) => {
       const boton = e.target.closest("[data-filtro]");
@@ -57,14 +67,21 @@
       boton.setAttribute("aria-pressed", String(activo));
     });
 
-    tarjetas.forEach(({ tarjeta, filtros, texto }) => {
-      const pasaFiltro = estado.filtro === "todo" || filtros.includes(estado.filtro);
+    tarjetas.forEach(({ tarjeta, producto, texto }) => {
+      const pasaFiltro = estado.filtro === "todo" || BD.perteneceA(producto, estado.filtro);
       const pasaBusqueda = palabras.every((palabra) => texto.includes(palabra));
       tarjeta.hidden = !(pasaFiltro && pasaBusqueda);
       if (!tarjeta.hidden) visibles++;
     });
 
     cantidad.textContent = visibles === 1 ? "1 producto" : `${visibles} productos`;
+
+    // Categoría todavía vacía (sin búsqueda escrita): se avisa que vienen productos
+    const categoria = BD.buscarCategoria(estado.filtro);
+    mensajeVacio.textContent =
+      categoria && !palabras.length
+        ? `Todavía no hay productos en ${categoria.nombre}. ¡Próximamente!`
+        : "No encontramos productos con esa búsqueda.";
     sinResultados.hidden = visibles > 0;
 
     // La URL guarda la búsqueda: se puede compartir o volver con el botón Atrás
@@ -86,9 +103,8 @@
       tarjetas = productos.map((p) => {
         const tarjeta = BD.crearTarjeta(p);
         lista.appendChild(tarjeta);
-        const filtros = (p.filtros || []).map(normalizar);
         const texto = normalizar([p.nombre, p.categoria, p.resumen, ...(p.filtros || [])].join(" "));
-        return { tarjeta, filtros, texto };
+        return { tarjeta, producto: p, texto };
       });
       aplicar();
       BD.observarReveal(lista);

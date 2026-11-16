@@ -12,42 +12,32 @@
       <p class="seccion__bajada">Cuatro mundos, cientos de piezas. Todo impreso en nuestro taller y revisado a mano antes de salir.</p>
     </div>
 
+    <!-- Cada tarjeta arma un collage con las fotos de su categoría (catalogo.js).
+         Las categorías y qué "filtros" del JSON entran en cada una están en js/comun.js (CATEGORIAS). -->
     <div class="categorias__grid">
-      <a class="cat-card cat-card--dragones reveal" href="productos.html?filtro=dragones">
-        <img src="assets/img/dragon-ancestral.jpg" alt="" width="1200" height="828" loading="lazy">
-        <span class="cat-card__cant">24 modelos</span>
+      <a class="cat-card cat-card--grande reveal" href="productos.html?filtro=anime" data-categoria="anime" data-max-fotos="4">
+        <span class="cat-card__collage" aria-hidden="true"></span>
+        <span class="cat-card__cant">Ver productos</span>
         <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-        <span class="cat-card__info">
-          <strong>Dragones</strong>
-          <span>Desde minis de escritorio hasta 40 cm</span>
-        </span>
+        <span class="cat-card__info"><strong>Anime</strong></span>
       </a>
-      <a class="cat-card cat-card--anime reveal" href="productos.html?filtro=anime">
-        <img src="assets/img/cat-anime.jpg" alt="" width="505" height="762" loading="lazy">
-        <span class="cat-card__cant">38 modelos</span>
+      <a class="cat-card cat-card--alta reveal" href="productos.html?filtro=comic" data-categoria="comic" data-max-fotos="2">
+        <span class="cat-card__collage" aria-hidden="true"></span>
+        <span class="cat-card__cant">Ver productos</span>
         <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-        <span class="cat-card__info">
-          <strong>Figuras de anime</strong>
-          <span>Personajes originales y a pedido</span>
-        </span>
+        <span class="cat-card__info"><strong>Cómic</strong></span>
       </a>
-      <a class="cat-card cat-card--calabozos reveal" href="productos.html?filtro=calabozos">
-        <img src="assets/img/cat-calabozos.jpg" alt="" width="448" height="266" loading="lazy">
-        <span class="cat-card__cant">16 sets</span>
+      <a class="cat-card cat-card--chica reveal" href="productos.html?filtro=personalizables" data-categoria="personalizables" data-max-fotos="2">
+        <span class="cat-card__collage" aria-hidden="true"></span>
+        <span class="cat-card__cant">Ver productos</span>
         <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-        <span class="cat-card__info">
-          <strong>Calabozos</strong>
-          <span>Modulares, listos para rol</span>
-        </span>
+        <span class="cat-card__info"><strong>Personalizables</strong></span>
       </a>
-      <a class="cat-card cat-card--rol reveal" href="productos.html?filtro=rol">
-        <img src="assets/img/cat-rol.jpg" alt="" width="448" height="272" loading="lazy">
-        <span class="cat-card__cant">50+ ítems</span>
+      <a class="cat-card cat-card--chica reveal" href="productos.html?filtro=creaciones-unicas" data-categoria="creaciones-unicas" data-max-fotos="2">
+        <span class="cat-card__collage" aria-hidden="true"></span>
+        <span class="cat-card__cant">Ver productos</span>
         <span class="cat-card__flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-        <span class="cat-card__info">
-          <strong>Rol y accesorios</strong>
-          <span>Dados, soportes, llaveros</span>
-        </span>
+        <span class="cat-card__info"><strong>Creaciones únicas</strong></span>
       </a>
     </div>
   </div>

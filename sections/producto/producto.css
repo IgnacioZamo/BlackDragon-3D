@@ -194,3 +194,11 @@
     bottom: 2rem;
   }
 }
+
+/* Celular: el botón de compra ocupa todo el ancho y el texto puede bajar de línea */
+@media (max-width: 639px) {
+  .detalle__compra .btn {
+    width: 100%;
+    white-space: normal;
+  }
+}

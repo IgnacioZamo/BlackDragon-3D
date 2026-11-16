@@ -84,14 +84,29 @@ Cada producto tiene esta forma:
 ```
 
 - `id`: identificador sin espacios ni tildes. Se usa en el enlace a la ficha (`producto.html?id=dragon-ancestral`).
-- `filtros`: botones de filtro donde aparece (`dragones`, `anime`, `calabozos`, `rol`, `packs`).
+- `filtros`: palabras con las que se encuentra el producto. Definen en qué **categoría** aparece (ver abajo) y las usa el buscador (serie, personaje…).
 - `etiqueta`: cartel sobre la foto; `color` puede ser `rojo` o `blanco`. Se puede borrar si el producto no lleva.
 - `precio`: número sin puntos ni signo; la página lo muestra como `$ 38.900`. Con `null` muestra "Consultar precio".
 - `destacado`: `true` para que aparezca en "Piezas destacadas" de la landing (se muestran hasta 4). Todos los productos se ven en `productos.html`.
 - `resumen`: línea corta de la tarjeta. `descripcion`: texto de la ficha.
 - `imagenes`: la primera es la de la tarjeta; todas se ven en la ficha. Para cambiarlas, poner los archivos en `assets/img/productos/` y actualizar `src`. `alt` describe la foto para quienes no la ven.
 
-Los productos aparecen en el catálogo en el mismo orden que en el JSON. En `productos.html`, los botones de filtro se arman con el **primer** valor de `filtros` de cada producto, y el buscador busca en nombre, categoría, resumen y todos los `filtros`.
+Los productos aparecen en el catálogo en el mismo orden que en el JSON. El buscador de `productos.html` busca en nombre, categoría, resumen y todos los `filtros`.
+
+### Categorías del catálogo
+
+Las tarjetas de "Elegí tu universo" y los botones de `productos.html` son cuatro categorías. Un producto entra en una categoría si **alguno** de sus `filtros` es una de estas palabras (sin importar tildes ni mayúsculas):
+
+| Categoría | Palabras en `filtros` |
+|-----------|-----------------------|
+| Anime | `anime` |
+| Cómic | `comic`, `comics` |
+| Personalizables | `personalizable`, `personalizables` |
+| Creaciones únicas | `creaciones unicas`, `creacion unica` |
+
+Un producto puede estar en varias, por ejemplo `"filtros": ["anime", "personalizables", "goku"]`. Cada tarjeta de categoría arma sola su collage con las fotos de sus productos (los `destacado` primero) y muestra cuántos hay; sin productos dice "Próximamente". Las categorías se cambian en `js/comun.js` (`CATEGORIAS`).
+
+Los productos que no entran en ninguna categoría (hoy Anakin, con `peliculas`, y Rockera, con `originales`) tienen su propio botón en `productos.html`, armado con el primer valor de sus `filtros`.
 
 ### Sumar productos nuevos
 

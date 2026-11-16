@@ -1,62 +1,107 @@
 /* =========================================================
-   Catálogo: categorías y piezas destacadas
+   Catálogo: tarjetas de categoría con collage de fotos
+   (Anime, Cómic, Personalizables, Creaciones únicas)
    ========================================================= */
 
-/* ---------- tarjeta-categoria ---------- */
+/* ---------- Tarjeta de categoría ---------- */
 .cat-card {
   position: relative;
   display: block;
-  min-height: 250px;
+  min-height: 260px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: linear-gradient(180deg, #1c222b 0%, var(--obsidiana) 100%);
+  background: radial-gradient(ellipse at 50% 30%, #3a1420, var(--obsidiana) 75%);
   box-shadow: var(--sombra-card);
   color: var(--blanco);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cat-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 30px 60px -24px rgba(18, 22, 28, 0.45);
 }
 
-.cat-card img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-/* Las piezas chicas (castillo y dado) van arriba sin estirarse */
-.cat-card--calabozos img,
-.cat-card--rol img {
-  top: 12%;
-  height: 62%;
-  object-fit: contain;
-}
-
-.cat-card:hover img {
-  transform: scale(1.04);
-}
-
-/* Degradado inferior para que el texto se lea sobre la imagen */
+/* Degradado inferior para que el título se lea sobre las fotos */
 .cat-card::after {
   content: "";
   position: absolute;
-  inset: 45% 0 0;
-  background: linear-gradient(180deg, transparent, rgba(12, 16, 20, 0.92));
+  inset: 40% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(12, 16, 20, 0.95));
+  pointer-events: none;
 }
 
+/* ---------- Collage ----------
+   catalogo.js pone hasta data-max-fotos imágenes y marca cuántas
+   puso en data-fotos; la grilla se acomoda según la cantidad. */
+.cat-card__collage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  gap: 3px;
+  background: var(--obsidiana);
+}
+
+.cat-card__collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Las fotos son verticales: se prioriza la parte de arriba (las caras) */
+  object-position: 50% 25%;
+  transition: transform 0.6s ease;
+}
+
+.cat-card:hover .cat-card__collage img {
+  transform: scale(1.05);
+}
+
+.cat-card__collage[data-fotos="2"] {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cat-card__collage[data-fotos="3"] {
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.cat-card__collage[data-fotos="3"] img:first-child {
+  grid-row: span 2;
+}
+
+.cat-card__collage[data-fotos="4"] {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Categoría sin productos todavía */
+.cat-card__collage--vacio {
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(224, 36, 63, 0.18), transparent 60%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 10px),
+    var(--obsidiana);
+}
+
+.cat-card__collage--vacio::before {
+  content: "";
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: url("../../assets/img/logo.png") center / cover;
+  opacity: 0.35;
+  filter: grayscale(1);
+  transform: translateY(-20%);
+}
+
+/* ---------- Textos y botón ---------- */
 .cat-card__cant {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.85rem;
+  left: 0.85rem;
   z-index: 1;
   padding: 0.35rem 0.8rem;
   border-radius: var(--radius-pill);
-  background: rgba(12, 16, 20, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 16, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -64,16 +109,22 @@
 
 .cat-card__flecha {
   position: absolute;
-  top: 0.85rem;
-  right: 0.85rem;
+  top: 0.75rem;
+  right: 0.75rem;
   z-index: 1;
   display: none;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(12, 16, 20, 0.55);
+  transition: background-color 0.2s ease;
+}
+
+.cat-card:hover .cat-card__flecha {
+  background: var(--brasa);
+  border-color: var(--brasa);
 }
 
 .cat-card__flecha svg {
@@ -93,99 +144,109 @@
   display: block;
   font-family: var(--font-titulo);
   font-weight: 800;
-  font-size: clamp(1.1rem, 1.2vw + 0.8rem, 2rem);
+  font-size: clamp(1.2rem, 1.2vw + 0.85rem, 2.25rem);
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
-.cat-card__info span {
-  display: none;
-  margin-top: 0.3rem;
-  color: var(--texto-claro-suave);
-  font-size: 0.95rem;
+/* ---------- Grilla de categorías ---------- */
+/* Celular: una columna (las tarjetas quedan anchas y el collage se luce) */
+.categorias__grid {
+  display: grid;
+  gap: 1rem;
 }
 
-@media (min-width: 960px) {
+/* Tablet: dos columnas */
+@media (min-width: 640px) {
+  .categorias__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .cat-card {
-    min-height: 0;
-    border-radius: var(--radius-lg);
-  }
-
-  .cat-card--dragones {
-    background: radial-gradient(ellipse at 55% 40%, #6b1528, var(--obsidiana) 80%);
-  }
-
-  .cat-card--dragones img {
-    height: 88%;
-    object-fit: contain;
-  }
-
-  .cat-card--anime img {
-    top: 6%;
-    height: 72%;
-    object-fit: contain;
-  }
-
-  .cat-card--calabozos img,
-  .cat-card--rol img {
-    top: 14%;
-    height: 46%;
-  }
-
-  .cat-card__cant {
-    top: 1.75rem;
-    left: 1.75rem;
-    font-size: 0.8rem;
+    min-height: 300px;
   }
 
   .cat-card__flecha {
     display: grid;
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-
-  .cat-card__info {
-    left: 2rem;
-    right: 2rem;
-    bottom: 1.75rem;
-  }
-
-  .cat-card__info span {
-    display: block;
-  }
-
-  /* Las tarjetas angostas usan un titular más chico */
-  .cat-card--anime .cat-card__info,
-  .cat-card--calabozos .cat-card__info,
-  .cat-card--rol .cat-card__info {
-    left: 1.5rem;
-    right: 1.5rem;
-  }
-
-  .cat-card--anime strong,
-  .cat-card--calabozos strong,
-  .cat-card--rol strong {
-    font-size: 1.6rem;
   }
 }
 
-/* ---------- categorias ---------- */
-.categorias__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
+/* Escritorio: mosaico. Anime y Cómic ocupan dos filas; las otras dos se apilan */
 @media (min-width: 960px) {
-  /* Mosaico: dragones y anime ocupan dos filas; calabozos y rol se apilan */
   .categorias__grid {
     grid-template-columns: 2.3fr 1fr 1fr;
     grid-template-rows: repeat(2, minmax(270px, 1fr));
     gap: 1.75rem;
   }
 
-  .categorias__grid .cat-card--dragones,
-  .categorias__grid .cat-card--anime {
+  .cat-card {
+    min-height: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .cat-card--grande,
+  .cat-card--alta {
     grid-row: span 2;
+  }
+
+  /* En la tarjeta alta las dos fotos van una arriba de la otra */
+  .cat-card--alta .cat-card__collage[data-fotos="2"] {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .cat-card__cant {
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .cat-card__flecha {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .cat-card__info {
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+
+  .cat-card--grande .cat-card__info {
+    left: 2rem;
+    bottom: 1.75rem;
+  }
+
+  .cat-card--grande .cat-card__info strong {
+    font-size: clamp(2rem, 2vw + 1rem, 2.75rem);
+  }
+
+  .cat-card--alta .cat-card__info strong,
+  .cat-card--chica .cat-card__info strong {
+    font-size: 1.5rem;
+  }
+}
+
+/* Escritorio angosto: en las tarjetas chicas no entran juntas la etiqueta y la flecha */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .cat-card--alta .cat-card__flecha,
+  .cat-card--chica .cat-card__flecha {
+    display: none;
+  }
+}
+/* Celular: la tarjeta es baja, así que el collage muestra solo 2 fotos lado a lado */
+@media (max-width: 639px) {
+  .cat-card__collage[data-fotos="3"],
+  .cat-card__collage[data-fotos="4"] {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .cat-card__collage[data-fotos="3"] img:first-child {
+    grid-row: auto;
+  }
+
+  .cat-card__collage img:nth-child(n + 3) {
+    display: none;
   }
 }

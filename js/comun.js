@@ -25,6 +25,35 @@ const BD = (function () {
     return pedidoProductos;
   }
 
+  /* ---------- Categorías del catálogo ----------
+     Un producto pertenece a una categoría si alguna de sus "filtros"
+     en el JSON coincide con alguna de sus "etiquetas" (sin importar
+     tildes ni mayúsculas). Ej.: "filtros": ["comic", "superman"] → Cómic. */
+  const CATEGORIAS = [
+    { id: "anime", nombre: "Anime", etiquetas: ["anime"] },
+    { id: "comic", nombre: "Cómic", etiquetas: ["comic", "comics"] },
+    { id: "personalizables", nombre: "Personalizables", etiquetas: ["personalizable", "personalizables"] },
+    { id: "creaciones-unicas", nombre: "Creaciones únicas", etiquetas: ["creaciones unicas", "creacion unica", "creaciones-unicas"] }
+  ];
+
+  // Sin tildes ni mayúsculas, para comparar "Cómic" con "comic"
+  const normalizar = (texto) =>
+    String(texto || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .trim();
+
+  const buscarCategoria = (id) => CATEGORIAS.find((c) => c.id === normalizar(id));
+
+  // ¿El producto entra en este filtro? Acepta una categoría (anime, comic…) o cualquier valor de "filtros"
+  function perteneceA(producto, filtro) {
+    const filtros = (producto.filtros || []).map(normalizar);
+    const categoria = buscarCategoria(filtro);
+    const buscados = categoria ? categoria.etiquetas : [normalizar(filtro)];
+    return filtros.some((f) => buscados.includes(f));
+  }
+
   // Sin precio en el JSON ("precio": null) se muestra "Consultar precio"
   const tienePrecio = (valor) => typeof valor === "number" && valor > 0;
   const formatearPrecio = (valor) => (tienePrecio(valor) ? "$ " + valor.toLocaleString("es-AR") : "Consultar precio");
@@ -139,5 +168,17 @@ const BD = (function () {
     observarReveal(document);
   });
 
-  return { cargarProductos, formatearPrecio, linkWhatsAppProducto, conectarWhatsApp, marcarFavoritos, observarReveal, crearTarjeta };
+  return {
+    CATEGORIAS,
+    cargarProductos,
+    normalizar,
+    buscarCategoria,
+    perteneceA,
+    formatearPrecio,
+    linkWhatsAppProducto,
+    conectarWhatsApp,
+    marcarFavoritos,
+    observarReveal,
+    crearTarjeta
+  };
 })();
