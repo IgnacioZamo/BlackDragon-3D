@@ -1,8 +1,13 @@
 /* =========================================================
    Header: barra de navegación
+   - Celular y tablet (< 1200px): logo + botón de menú; el menú
+     se despliega debajo, centrado.
+   - Escritorio (≥ 1200px): grilla de 3 columnas iguales a los
+     costados, así el menú queda centrado en la barra aunque el
+     logo y el botón "Pedir presupuesto" midan distinto.
    ========================================================= */
 
-/* En la ficha de producto el header es una franja oscura propia */
+/* En la ficha y en Productos el header es una franja oscura propia */
 .header {
   position: relative;
   padding-bottom: 1.5rem;
@@ -16,7 +21,7 @@
   background: none;
 }
 
-/* ---------- navegacion ---------- */
+/* ---------- Barra ---------- */
 .nav {
   position: relative;
   z-index: 10;
@@ -24,12 +29,26 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  min-height: 64px;
   margin-top: 1rem;
-  padding: 0.6rem 0.6rem 0.6rem 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.6rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-pill);
   background: rgba(26, 32, 40, 0.65);
   backdrop-filter: blur(12px);
+}
+
+.nav .marca {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* En pantallas muy angostas el nombre se achica para no chocar con el botón */
+@media (max-width: 380px) {
+  .nav .marca__nombre {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
 }
 
 /* Con el prefijo .nav le ganan a .btn y .btn-icono, que también fijan display */
@@ -38,7 +57,17 @@
   display: none;
 }
 
-/* Menú desplegable en celular */
+/* ---------- Botón de menú (hamburguesa ↔ cruz) ---------- */
+.nav__toggle .icono-cerrar,
+.nav__toggle[aria-expanded="true"] .icono-menu {
+  display: none;
+}
+
+.nav__toggle[aria-expanded="true"] .icono-cerrar {
+  display: block;
+}
+
+/* ---------- Menú desplegable (celular y tablet) ---------- */
 .nav .nav__links.abierto {
   position: absolute;
   top: calc(100% + 0.5rem);
@@ -46,48 +75,106 @@
   right: 0;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 0.25rem;
-  padding: 1rem;
+  padding: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   background: var(--carbon);
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: menu-abrir 0.2s ease;
+}
+
+@keyframes menu-abrir {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
 }
 
 .nav__links.abierto a:not(.btn) {
   display: block;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
+  color: #d5d8de;
+  font-size: 1.05rem;
 }
 
-.nav__links.abierto a:not(.btn):hover {
+.nav__links.abierto a:not(.btn):hover,
+.nav__links.abierto a[aria-current="page"] {
   background: rgba(255, 255, 255, 0.06);
+  color: var(--blanco);
+}
+
+.nav__cta-movil {
+  margin-top: 0.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav__cta-movil .btn {
   width: 100%;
-  margin-top: 0.5rem;
 }
 
-@media (min-width: 960px) {
+/* En tablet el menú no ocupa todo el ancho: queda centrado bajo la barra */
+@media (min-width: 640px) {
+  .nav .nav__links.abierto {
+    left: 50%;
+    right: auto;
+    width: min(26rem, 100%);
+    transform: translateX(-50%);
+    animation: none;
+  }
+}
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 1200px) {
   .nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    min-height: 80px;
     margin-top: 2.25rem;
     padding: 0.75rem 0.75rem 0.75rem 1rem;
   }
 
+  .nav .marca {
+    justify-self: start;
+  }
+
   .nav .nav__links {
     display: flex;
-    gap: clamp(1rem, 2.5vw, 2.25rem);
+    align-items: center;
+    gap: clamp(1.5rem, 2.2vw, 2.25rem);
     font-size: 1.05rem;
   }
 
   .nav__links a {
+    position: relative;
+    display: block;
+    padding: 0.35rem 0;
     color: #d5d8de;
+    white-space: nowrap;
     transition: color 0.2s ease;
   }
 
-  .nav__links a:hover {
+  .nav__links a:hover,
+  .nav__links a[aria-current="page"] {
     color: var(--blanco);
+  }
+
+  /* Rayita roja bajo la página actual */
+  .nav__links a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.15rem;
+    width: 1.25rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brasa);
+    transform: translateX(-50%);
   }
 
   .nav .nav__cta-movil,
@@ -97,5 +184,6 @@
 
   .nav .nav__cta {
     display: inline-flex;
+    justify-self: end;
   }
 }

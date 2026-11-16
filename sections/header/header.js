@@ -8,6 +8,15 @@
 
   const etiqueta = toggle.querySelector(".sr-only");
 
+  // Marca la página actual: Productos (y la ficha de un producto) o Inicio en la landing
+  const pagina = window.location.pathname.split("/").pop() || "index.html";
+  const actual = pagina === "producto.html" ? "productos.html" : pagina;
+  menu.querySelectorAll("a:not(.btn)").forEach((enlace) => {
+    const destino = enlace.getAttribute("href");
+    const esActual = actual === "index.html" ? /#inicio$/.test(destino) : destino === actual;
+    if (esActual) enlace.setAttribute("aria-current", "page");
+  });
+
   const abrirOCerrar = (abrir) => {
     menu.classList.toggle("abierto", abrir);
     toggle.setAttribute("aria-expanded", String(abrir));
