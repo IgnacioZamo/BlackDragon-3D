@@ -2,6 +2,8 @@
 
 Landing page y ficha de producto para **Black Dragon 3D**, un taller de impresión 3D de figuras de anime, dragones, calabozos modulares y accesorios de rol. Maquetado a partir de los diseños de `Diseño/` (versión de cuerpo claro).
 
+> **Versión 1.0.0: primera versión para presentar al cliente.** Incluye landing, página Productos con buscador, ficha de producto y catálogo desde `data/productos.json`. Los textos marcados como `[PENDIENTE]` y los datos de contacto se completan con el cliente (ver *Pendientes*).
+
 ## Estructura
 
 ```
