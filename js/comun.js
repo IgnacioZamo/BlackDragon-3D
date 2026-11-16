@@ -70,6 +70,7 @@ const BD = (function () {
     campo("nombre").href = `producto.html?id=${encodeURIComponent(p.id)}`;
     campo("resumen").textContent = p.resumen || "";
     campo("precio").textContent = formatearPrecio(p.precio);
+    campo("precio").classList.toggle("precio--consultar", !tienePrecio(p.precio));
 
     campo("pedir").href = linkWhatsAppProducto(p);
     campo("pedir").querySelector(".sr-only").textContent = `Pedir ${p.nombre} por WhatsApp`;

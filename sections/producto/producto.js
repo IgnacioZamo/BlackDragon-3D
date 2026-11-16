@@ -22,6 +22,7 @@
     $("nombre").textContent = p.nombre;
     $("descripcion").textContent = p.descripcion;
     $("precio").textContent = BD.formatearPrecio(p.precio);
+    $("precio").classList.toggle("precio--consultar", !(typeof p.precio === "number" && p.precio > 0));
 
     if (p.etiqueta) {
       $("etiqueta").textContent = p.etiqueta.texto;

@@ -133,6 +133,108 @@
   }
 }
 
+/* ---------- Celular y tablet: una columna ----------
+   Orden como en la lámina móvil: texto → botones → figura → estadísticas.
+   display: contents deja que los hijos de .hero__texto se ordenen junto a la figura. */
+@media (max-width: 959px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__texto {
+    display: contents;
+  }
+
+  .hero__arte {
+    order: 1;
+    width: min(100%, 26rem);
+    margin: 2rem auto 0;
+  }
+
+  .hero__stats {
+    order: 2;
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 639px) {
+  .hero {
+    padding-block: 2rem 2.5rem;
+  }
+
+  .chip-punto {
+    align-self: flex-start;
+    font-size: 0.85rem;
+  }
+
+  .hero__titulo {
+    margin-top: 1.25rem;
+    font-size: clamp(2.1rem, 10vw, 2.9rem);
+    line-height: 1.05;
+  }
+
+  .hero__bajada {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .hero__acciones {
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .hero__acciones .btn--grande {
+    min-height: 54px;
+    font-size: 1.05rem;
+  }
+
+  .hero__arte {
+    aspect-ratio: 1.2;
+  }
+
+  /* Las tarjetas flotantes tapan la figura en pantallas chicas */
+  .hero__arte .tarjeta-flotante {
+    display: none;
+  }
+
+  /* Tres columnas parejas, centradas */
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .hero__stats dt {
+    font-size: clamp(1.15rem, 5.5vw, 1.5rem);
+  }
+
+  .hero__stats dd {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .cinta {
+    padding-top: 1rem;
+  }
+
+  .cinta__pista {
+    gap: 1.25rem;
+  }
+
+  .cinta span {
+    font-size: 1.15rem;
+  }
+
+  .cinta i {
+    font-size: 1.1rem;
+  }
+}
+
 @media (min-width: 960px) {
   .hero {
     grid-template-columns: 1.1fr 0.9fr;

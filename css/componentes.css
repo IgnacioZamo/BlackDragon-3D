@@ -242,6 +242,13 @@
   }
 }
 
+/* Sin precio cargado: "Consultar precio" va más chico y puede bajar de línea */
+.precio.precio--consultar {
+  font-size: 1rem;
+  white-space: normal;
+  color: var(--texto-suave);
+}
+
 /* ---------- boton-favorito ---------- */
 .boton-favorito {
   position: absolute;

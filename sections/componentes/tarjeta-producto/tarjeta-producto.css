@@ -7,7 +7,8 @@
 .prod-card {
   position: relative;
   display: grid;
-  grid-template-columns: 130px 1fr;
+  /* minmax(0, 1fr): sin esto el texto largo (\"Consultar precio\") ensancha la tarjeta */
+  grid-template-columns: 110px minmax(0, 1fr);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--blanco);
@@ -79,6 +80,7 @@
 
 .prod-card__pie {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;

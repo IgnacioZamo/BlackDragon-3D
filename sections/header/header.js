@@ -1,4 +1,4 @@
-/* Menú desplegable de la navegación en celular */
+/* Menú hamburguesa de la navegación (celular y tablet) */
 (function () {
   "use strict";
 
@@ -21,9 +21,16 @@
     menu.classList.toggle("abierto", abrir);
     toggle.setAttribute("aria-expanded", String(abrir));
     etiqueta.textContent = abrir ? "Cerrar menú" : "Abrir menú";
+    // En celular el menú tapa toda la pantalla: se frena el scroll de atrás (ver header.css)
+    document.documentElement.classList.toggle("menu-abierto", abrir);
   };
 
   toggle.addEventListener("click", () => abrirOCerrar(!menu.classList.contains("abierto")));
+
+  // Si se agranda la ventana a escritorio con el menú abierto, se cierra
+  window.matchMedia("(min-width: 1200px)").addEventListener("change", (e) => {
+    if (e.matches) abrirOCerrar(false);
+  });
 
   // Al elegir una sección el menú se cierra para no tapar el contenido
   menu.addEventListener("click", (e) => {
