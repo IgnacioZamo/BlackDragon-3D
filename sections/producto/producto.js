@@ -39,6 +39,8 @@
 
     // Imagen principal y miniaturas para cambiarla
     const principal = $("img-principal");
+    // Antes/después: la foto se muestra entera, sin recortar (ver producto.css)
+    ficha.classList.toggle("detalle--foto-completa", BD.esFotoCompleta(p));
     const miniaturas = $("miniaturas");
 
     const elegir = (img, boton) => {

@@ -202,3 +202,8 @@
     white-space: normal;
   }
 }
+/* Fotos de antes/después (Restauraciones): enteras, sin recortar */
+.detalle--foto-completa .detalle__img img,
+.detalle--foto-completa .miniatura img {
+  object-fit: contain;
+}

@@ -58,6 +58,10 @@ const BD = (function () {
     return filtros.some((f) => buscados.includes(f));
   }
 
+  // Productos cuya foto se muestra entera, sin recortar (las de antes/después de Restauraciones)
+  const SECCIONES_FOTO_COMPLETA = ["restauraciones"];
+  const esFotoCompleta = (producto) => SECCIONES_FOTO_COMPLETA.some((s) => perteneceA(producto, s));
+
   // Sin precio en el JSON ("precio": null) se muestra "Consultar precio"
   const tienePrecio = (valor) => typeof valor === "number" && valor > 0;
   const formatearPrecio = (valor) => (tienePrecio(valor) ? "$ " + valor.toLocaleString("es-AR") : "Consultar precio");
@@ -84,6 +88,8 @@ const BD = (function () {
     const imagen = (p.imagenes || [])[0] || { src: "", alt: "" };
 
     tarjeta.dataset.id = p.id;
+    // Las fotos de antes/después no se recortan: se muestran enteras (ver tarjeta-producto.css)
+    tarjeta.classList.toggle("prod-card--foto-completa", esFotoCompleta(p));
     campo("imagen").src = imagen.src;
     campo("imagen").alt = imagen.alt || p.nombre;
 
@@ -178,6 +184,8 @@ const BD = (function () {
     normalizar,
     buscarCategoria,
     perteneceA,
+    esFotoCompleta,
+    SECCIONES_FOTO_COMPLETA,
     formatearPrecio,
     linkWhatsAppProducto,
     conectarWhatsApp,

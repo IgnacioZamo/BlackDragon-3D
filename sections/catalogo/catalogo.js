@@ -31,6 +31,8 @@
 
     const fotos = deLaCategoria.slice(0, maximo);
     collage.dataset.fotos = fotos.length;
+    // Antes/después: fotos enteras, sin recortar (ver catalogo.css)
+    tarjeta.classList.toggle("cat-card--foto-completa", BD.SECCIONES_FOTO_COMPLETA.includes(categoria));
     fotos.forEach((p) => {
       const img = document.createElement("img");
       img.src = p.imagenes[0].src;

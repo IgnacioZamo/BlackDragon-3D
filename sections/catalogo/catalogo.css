@@ -262,3 +262,39 @@
     display: none;
   }
 }
+/* ---------- Tarjeta de Restauraciones: fotos de antes/después enteras ----------
+   Se achican y dejan lugar arriba (etiqueta) y abajo (título) para que no los tapen. */
+.cat-card--foto-completa .cat-card__collage {
+  padding: 3.25rem 0.75rem 3.75rem;
+  gap: 0.5rem;
+  /* minmax(0, 1fr): la fila no crece con la foto, así no baja hasta el título */
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.cat-card--foto-completa .cat-card__collage img {
+  min-height: 0;
+  object-fit: contain;
+}
+
+.cat-card--foto-completa:hover .cat-card__collage img {
+  transform: scale(1.02);
+}
+
+/* El degradado del título queda solo en la franja de abajo */
+.cat-card--foto-completa::after {
+  inset: 72% 0 0;
+}
+
+/* Celular: la tarjeta es más alta para que las fotos enteras se vean grandes */
+@media (max-width: 639px) {
+  .cat-card.cat-card--foto-completa {
+    min-height: 330px;
+  }
+}
+
+/* Escritorio: la etiqueta está más abajo, así que las fotos bajan un poco */
+@media (min-width: 960px) {
+  .cat-card--foto-completa .cat-card__collage {
+    padding-top: 3.75rem;
+  }
+}
