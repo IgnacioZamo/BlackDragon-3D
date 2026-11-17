@@ -18,7 +18,9 @@ const BD = (function () {
   function cargarProductos() {
     pedidoProductos =
       pedidoProductos ||
-      fetch("data/productos.json").then((r) => {
+      // "no-cache": el navegador pregunta si el JSON cambió antes de usar su copia guardada,
+      // así los productos nuevos aparecen apenas se publican (sin esto, GitHub Pages lo guarda 10 min)
+      fetch("data/productos.json", { cache: "no-cache" }).then((r) => {
         if (!r.ok) throw new Error(`No se pudo cargar data/productos.json (${r.status})`);
         return r.json().then((datos) => datos.productos);
       });
