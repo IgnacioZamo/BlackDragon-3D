@@ -1,14 +1,37 @@
 {
   "productos": [
     {
+      "id": "escanor",
+      "nombre": "Escanor",
+      "categoria": "Anime y Cómic · Nanatsu no Taizai",
+      "filtros": [
+        "anime-comic",
+        "nanatsu no taizai",
+        "seven deadly sins",
+        "escanor"
+      ],
+      "destacado": true,
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/escanor.jpeg",
+          "alt": "Figura de Escanor con su hacha sobre una base con su nombre"
+        }
+      ]
+    },
+    {
       "id": "goku-ssj",
       "nombre": "Goku Super Saiyajin",
-      "categoria": "Anime · Dragon Ball",
+      "categoria": "Anime y Cómic · Dragon Ball",
       "filtros": [
-        "anime",
+        "anime-comic",
         "dragon ball",
         "goku",
-        "saiyajin"
+        "saiyajin",
+        "goku super saiyajin"
       ],
       "etiqueta": {
         "texto": "Más vendido",
@@ -21,20 +44,125 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-Goku_ssj.jpeg",
+          "src": "assets/img/productos/anime-comic/goku-ssj.jpeg",
           "alt": "Figura de Goku Super Saiyajin con traje naranja sobre base dorada"
+        }
+      ]
+    },
+    {
+      "id": "hisoka",
+      "nombre": "Hisoka",
+      "categoria": "Anime y Cómic · Hunter x Hunter",
+      "filtros": [
+        "anime-comic",
+        "hunter x hunter",
+        "hisoka"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/hisoka.jpeg",
+          "alt": "Figura de Hisoka con cartas en la mano y efecto rosa"
+        }
+      ]
+    },
+    {
+      "id": "mago-oscuro",
+      "nombre": "Mago Oscuro",
+      "categoria": "Anime y Cómic · Yu-Gi-Oh!",
+      "filtros": [
+        "anime-comic",
+        "yu-gi-oh!",
+        "yu gi oh",
+        "mago oscuro"
+      ],
+      "destacado": true,
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/mago-oscuro.jpeg",
+          "alt": "Figura del Mago Oscuro con túnica violeta y báculo verde"
+        }
+      ]
+    },
+    {
+      "id": "pretty-derby",
+      "nombre": "Pretty Derby",
+      "categoria": "Anime y Cómic · Uma Musume",
+      "filtros": [
+        "anime-comic",
+        "uma musume",
+        "pretty derby"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/pretty-derby.jpeg",
+          "alt": "Figura de personaje de Pretty Derby con uniforme rojo sobre base de pasto"
+        }
+      ]
+    },
+    {
+      "id": "super-bu",
+      "nombre": "Super Bu",
+      "categoria": "Anime y Cómic · Dragon Ball",
+      "filtros": [
+        "anime-comic",
+        "dragon ball",
+        "majin bu",
+        "super bu"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/super-bu.jpeg",
+          "alt": "Figura de Super Bu sosteniendo una esfera de energía"
+        }
+      ]
+    },
+    {
+      "id": "superman",
+      "nombre": "Superman",
+      "categoria": "Anime y Cómic · DC Cómics",
+      "filtros": [
+        "anime-comic",
+        "dc cómics",
+        "comic",
+        "superheroes",
+        "superman"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/superman.jpeg",
+          "alt": "Figura de Superman con capa roja sobre base dorada"
         }
       ]
     },
     {
       "id": "zoro",
       "nombre": "Zoro",
-      "categoria": "Anime · One Piece",
+      "categoria": "Anime y Cómic · One Piece",
       "filtros": [
-        "anime",
+        "anime-comic",
         "one piece",
-        "zoro",
-        "espadas"
+        "espadas",
+        "zoro"
       ],
       "etiqueta": {
         "texto": "Nuevo",
@@ -47,63 +175,20 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-Zoro.jpeg",
+          "src": "assets/img/productos/anime-comic/zoro.jpeg",
           "alt": "Figura de Zoro con tres espadas sobre base de madera con calavera"
         }
       ]
     },
     {
-      "id": "mago-oscuro",
-      "nombre": "Mago Oscuro",
-      "categoria": "Anime · Yu-Gi-Oh!",
+      "id": "taiki-shuttle",
+      "nombre": "Taiki Shuttle",
+      "categoria": "Anime y Cómic · Uma Musume",
       "filtros": [
-        "anime",
-        "yu gi oh",
-        "mago",
-        "mago oscuro"
-      ],
-      "destacado": true,
-      "precio": null,
-      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
-      "descripcion": "[PENDIENTE] Descripción del producto.",
-      "caracteristicas": [],
-      "imagenes": [
-        {
-          "src": "assets/img/productos/Figura3D-Mago_Oscuro.jpeg",
-          "alt": "Figura del Mago Oscuro con túnica violeta y báculo verde"
-        }
-      ]
-    },
-    {
-      "id": "escanor",
-      "nombre": "Escanor",
-      "categoria": "Anime · Nanatsu no Taizai",
-      "filtros": [
-        "anime",
-        "nanatsu no taizai",
-        "seven deadly sins",
-        "escanor"
-      ],
-      "destacado": true,
-      "precio": null,
-      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
-      "descripcion": "[PENDIENTE] Descripción del producto.",
-      "caracteristicas": [],
-      "imagenes": [
-        {
-          "src": "assets/img/productos/Figura3D-Escanor.jpeg",
-          "alt": "Figura de Escanor con su hacha sobre una base con su nombre"
-        }
-      ]
-    },
-    {
-      "id": "hisoka",
-      "nombre": "Hisoka",
-      "categoria": "Anime · Hunter x Hunter",
-      "filtros": [
-        "anime",
-        "hunter x hunter",
-        "hisoka"
+        "anime-comic",
+        "uma musume",
+        "pretty derby",
+        "taiki shuttle"
       ],
       "precio": null,
       "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
@@ -111,20 +196,660 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-Hisoka.jpeg",
-          "alt": "Figura de Hisoka con cartas en la mano y efecto rosa"
+          "src": "assets/img/productos/anime-comic/taiki-shuttle.jpeg",
+          "alt": "Figura de chica caballo con ropa de vaquera verde y botas marrones"
         }
       ]
     },
     {
-      "id": "super-bu",
-      "nombre": "Super Bu",
-      "categoria": "Anime · Dragon Ball",
+      "id": "majin-bu",
+      "nombre": "Majin Bu",
+      "categoria": "Anime y Cómic · Dragon Ball",
       "filtros": [
-        "anime",
+        "anime-comic",
+        "dragon ball",
+        "majin bu"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/majin-bu.jpeg",
+          "alt": "Figura de Majin Bu de pie sobre una base de roca"
+        }
+      ]
+    },
+    {
+      "id": "kiki",
+      "nombre": "Kiki",
+      "categoria": "Anime y Cómic · Studio Ghibli",
+      "filtros": [
+        "anime-comic",
+        "studio ghibli",
+        "kiki entregas a domicilio",
+        "kiki"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/kiki.jpeg",
+          "alt": "Figura chibi de Kiki sentada en su escoba sobre una base de agua"
+        }
+      ]
+    },
+    {
+      "id": "maomao",
+      "nombre": "Maomao",
+      "categoria": "Anime y Cómic · Los diarios de la boticaria",
+      "filtros": [
+        "anime-comic",
+        "los diarios de la boticaria",
+        "kusuriya no hitorigoto",
+        "maomao"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/maomao.jpeg",
+          "alt": "Figura chibi de Maomao con canasta sobre una base de jardín"
+        }
+      ]
+    },
+    {
+      "id": "asuka-langley",
+      "nombre": "Asuka Langley",
+      "categoria": "Anime y Cómic · Evangelion",
+      "filtros": [
+        "anime-comic",
+        "evangelion",
+        "asuka langley"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/asuka-langley.jpeg",
+          "alt": "Figura de Asuka Langley con traje de piloto rojo y lanza"
+        }
+      ]
+    },
+    {
+      "id": "rei-ayanami",
+      "nombre": "Rei Ayanami",
+      "categoria": "Anime y Cómic · Evangelion",
+      "filtros": [
+        "anime-comic",
+        "evangelion",
+        "rei ayanami"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/rei-ayanami.jpeg",
+          "alt": "Figura de Rei Ayanami con traje de piloto blanco sobre base celeste"
+        }
+      ]
+    },
+    {
+      "id": "satoru-gojo",
+      "nombre": "Satoru Gojo",
+      "categoria": "Anime y Cómic · Jujutsu Kaisen",
+      "filtros": [
+        "anime-comic",
+        "jujutsu kaisen",
+        "gojo",
+        "satoru gojo"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/satoru-gojo.jpeg",
+          "alt": "Figura de Satoru Gojo sobre una base de fuego rojo"
+        }
+      ]
+    },
+    {
+      "id": "luffy",
+      "nombre": "Monkey D. Luffy",
+      "categoria": "Anime y Cómic · One Piece",
+      "filtros": [
+        "anime-comic",
+        "one piece",
+        "luffy",
+        "monkey d. luffy"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/luffy.jpeg",
+          "alt": "Figura de Luffy con sombrero de paja sobre base de nube"
+        }
+      ]
+    },
+    {
+      "id": "johnny-bravo",
+      "nombre": "Johnny Bravo",
+      "categoria": "Anime y Cómic · Cartoon Network",
+      "filtros": [
+        "anime-comic",
+        "cartoon network",
+        "comic",
+        "johnny bravo"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/johnny-bravo.jpeg",
+          "alt": "Figura de Johnny Bravo mostrando el bíceps"
+        }
+      ]
+    },
+    {
+      "id": "nico-robin",
+      "nombre": "Nico Robin",
+      "categoria": "Anime y Cómic · One Piece",
+      "filtros": [
+        "anime-comic",
+        "one piece",
+        "nico robin"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/nico-robin.jpeg",
+          "alt": "Figura de Nico Robin con pollera rosa sobre base de plantas"
+        }
+      ]
+    },
+    {
+      "id": "power-rangers",
+      "nombre": "Power Rangers",
+      "categoria": "Anime y Cómic · Power Rangers",
+      "filtros": [
+        "anime-comic",
+        "power rangers",
+        "set"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/power-rangers.jpeg",
+          "alt": "Set de seis Power Rangers en versión chibi"
+        }
+      ]
+    },
+    {
+      "id": "goku-nino",
+      "nombre": "Goku niño",
+      "categoria": "Anime y Cómic · Dragon Ball",
+      "filtros": [
+        "anime-comic",
+        "dragon ball",
+        "goku",
+        "goku niño"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/goku-nino.jpeg",
+          "alt": "Figura de Goku de niño sobre una base de pasto"
+        }
+      ]
+    },
+    {
+      "id": "hechicero-tunica-azul",
+      "nombre": "Hechicero de túnica azul",
+      "categoria": "Anime y Cómic",
+      "filtros": [
+        "anime-comic",
+        "hechicero de túnica azul"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/hechicero-tunica-azul-1.jpeg",
+          "alt": "Figura de hechicero de pelo largo con túnica azul, báculo y una calavera en la mano"
+        },
+        {
+          "src": "assets/img/productos/anime-comic/hechicero-tunica-azul-2.jpeg",
+          "alt": "Figura de hechicero de pelo largo con túnica azul, báculo y una calavera en la mano"
+        }
+      ]
+    },
+    {
+      "id": "sailor-moon",
+      "nombre": "Sailor Moon y Luna",
+      "categoria": "Anime y Cómic · Sailor Moon",
+      "filtros": [
+        "anime-comic",
+        "sailor moon",
+        "sailor moon y luna"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/sailor-moon.jpeg",
+          "alt": "Figura de Sailor Moon junto a la gata Luna"
+        }
+      ]
+    },
+    {
+      "id": "ryuk",
+      "nombre": "Ryuk",
+      "categoria": "Anime y Cómic · Death Note",
+      "filtros": [
+        "anime-comic",
+        "death note",
+        "ryuk"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/ryuk.jpeg",
+          "alt": "Figura de Ryuk sobre una base oscura"
+        }
+      ]
+    },
+    {
+      "id": "obanai-iguro",
+      "nombre": "Obanai Iguro",
+      "categoria": "Anime y Cómic · Kimetsu no Yaiba",
+      "filtros": [
+        "anime-comic",
+        "kimetsu no yaiba",
+        "demon slayer",
+        "obanai iguro"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/obanai-iguro.jpeg",
+          "alt": "Figura de Obanai Iguro con haori a rayas"
+        }
+      ]
+    },
+    {
+      "id": "rogue-navidad",
+      "nombre": "Rogue navideña",
+      "categoria": "Anime y Cómic · X-Men",
+      "filtros": [
+        "anime-comic",
+        "x-men",
+        "comic",
+        "marvel",
+        "rogue navideña"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/rogue-navidad.jpeg",
+          "alt": "Figura de Rogue con traje verde y gorro navideño"
+        }
+      ]
+    },
+    {
+      "id": "seiya-pegaso",
+      "nombre": "Seiya de Pegaso",
+      "categoria": "Anime y Cómic · Saint Seiya",
+      "filtros": [
+        "anime-comic",
+        "saint seiya",
+        "caballeros del zodiaco",
+        "seiya de pegaso"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/seiya-pegaso.jpeg",
+          "alt": "Figura de Seiya de Pegaso con armadura blanca y roja"
+        }
+      ]
+    },
+    {
+      "id": "faye-valentine",
+      "nombre": "Faye Valentine",
+      "categoria": "Anime y Cómic · Cowboy Bebop",
+      "filtros": [
+        "anime-comic",
+        "cowboy bebop",
+        "faye valentine"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/faye-valentine.jpeg",
+          "alt": "Figura de Faye Valentine con traje amarillo"
+        }
+      ]
+    },
+    {
+      "id": "alphonse-elric",
+      "nombre": "Alphonse Elric",
+      "categoria": "Anime y Cómic · Fullmetal Alchemist",
+      "filtros": [
+        "anime-comic",
+        "fullmetal alchemist",
+        "alphonse elric"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/alphonse-elric.jpeg",
+          "alt": "Figura de Alphonse Elric con gatitos sobre una base de pasto"
+        }
+      ]
+    },
+    {
+      "id": "rogue",
+      "nombre": "Rogue",
+      "categoria": "Anime y Cómic · X-Men",
+      "filtros": [
+        "anime-comic",
+        "x-men",
+        "comic",
+        "marvel",
+        "rogue"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/rogue.jpeg",
+          "alt": "Figura de Rogue con traje verde y amarillo sosteniendo cartas"
+        }
+      ]
+    },
+    {
+      "id": "inuyasha",
+      "nombre": "Inuyasha",
+      "categoria": "Anime y Cómic · Inuyasha",
+      "filtros": [
+        "anime-comic",
+        "inuyasha"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/inuyasha.jpeg",
+          "alt": "Figura de Inuyasha con ropa roja"
+        }
+      ]
+    },
+    {
+      "id": "ippo-makunouchi",
+      "nombre": "Ippo Makunouchi",
+      "categoria": "Anime y Cómic · Hajime no Ippo",
+      "filtros": [
+        "anime-comic",
+        "hajime no ippo",
+        "boxeo",
+        "ippo makunouchi"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/ippo-makunouchi.jpeg",
+          "alt": "Figura de Ippo Makunouchi lanzando un golpe con guantes de boxeo"
+        }
+      ]
+    },
+    {
+      "id": "bruja-cecilia",
+      "nombre": "Bruja Cecilia",
+      "categoria": "Anime y Cómic",
+      "filtros": [
+        "anime-comic",
+        "bruja",
+        "bruja cecilia"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/bruja-cecilia.jpeg",
+          "alt": "Figura de una bruja sentada en su escoba con un búho, sobre una base con el nombre Cecilia"
+        }
+      ]
+    },
+    {
+      "id": "peppa-pig",
+      "nombre": "Peppa Pig",
+      "categoria": "Anime y Cómic · Peppa Pig",
+      "filtros": [
+        "anime-comic",
+        "peppa pig",
+        "dibujos animados"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/peppa-pig.jpeg",
+          "alt": "Figura de Peppa Pig sobre una base"
+        }
+      ]
+    },
+    {
+      "id": "gyomei-himejima",
+      "nombre": "Gyomei Himejima",
+      "categoria": "Anime y Cómic · Kimetsu no Yaiba",
+      "filtros": [
+        "anime-comic",
+        "kimetsu no yaiba",
+        "demon slayer",
+        "gyomei himejima"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/gyomei-himejima.jpeg",
+          "alt": "Figura de Gyomei Himejima con rosario"
+        }
+      ]
+    },
+    {
+      "id": "megumin",
+      "nombre": "Megumin",
+      "categoria": "Anime y Cómic · KonoSuba",
+      "filtros": [
+        "anime-comic",
+        "konosuba",
+        "megumin"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/megumin.jpeg",
+          "alt": "Figura de Megumin con sombrero de bruja y báculo"
+        }
+      ]
+    },
+    {
+      "id": "kento-nanami",
+      "nombre": "Kento Nanami",
+      "categoria": "Anime y Cómic · Jujutsu Kaisen",
+      "filtros": [
+        "anime-comic",
+        "jujutsu kaisen",
+        "nanami",
+        "kento nanami"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/kento-nanami.jpeg",
+          "alt": "Figura de Kento Nanami con traje beige"
+        }
+      ]
+    },
+    {
+      "id": "shun-andromeda",
+      "nombre": "Shun de Andrómeda",
+      "categoria": "Anime y Cómic · Saint Seiya",
+      "filtros": [
+        "anime-comic",
+        "saint seiya",
+        "caballeros del zodiaco",
+        "shun de andrómeda"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/shun-andromeda.jpeg",
+          "alt": "Figura de Shun de Andrómeda con armadura rosa y cadenas"
+        }
+      ]
+    },
+    {
+      "id": "sakura-kinomoto",
+      "nombre": "Sakura Kinomoto",
+      "categoria": "Anime y Cómic · Sakura Card Captor",
+      "filtros": [
+        "anime-comic",
+        "sakura card captor",
+        "kero",
+        "sakura kinomoto"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/sakura-kinomoto.jpeg",
+          "alt": "Figura de Sakura Kinomoto con uniforme escolar y Kero"
+        }
+      ]
+    },
+    {
+      "id": "rei-ayanami-lanza",
+      "nombre": "Rei Ayanami con lanza",
+      "categoria": "Anime y Cómic · Evangelion",
+      "filtros": [
+        "anime-comic",
+        "evangelion",
+        "rei ayanami con lanza"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/rei-ayanami-lanza.jpeg",
+          "alt": "Figura de Rei Ayanami con traje de piloto blanco y la lanza roja"
+        }
+      ]
+    },
+    {
+      "id": "toph-beifong",
+      "nombre": "Toph Beifong",
+      "categoria": "Anime y Cómic · Avatar: la leyenda de Aang",
+      "filtros": [
+        "anime-comic",
+        "avatar: la leyenda de aang",
+        "avatar",
+        "toph beifong"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/toph-beifong.jpeg",
+          "alt": "Figura de Toph Beifong sobre una base de roca"
+        }
+      ]
+    },
+    {
+      "id": "majin-bu-gym",
+      "nombre": "Majin Bu Gym",
+      "categoria": "Anime y Cómic · Dragon Ball",
+      "filtros": [
+        "anime-comic",
         "dragon ball",
         "majin bu",
-        "super bu"
+        "majin bu gym"
       ],
       "precio": null,
       "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
@@ -132,19 +857,18 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-SuperBu.jpeg",
-          "alt": "Figura de Super Bu sosteniendo una esfera de energía"
+          "src": "assets/img/productos/anime-comic/majin-bu-gym.jpeg",
+          "alt": "Figura chibi de Majin Bu levantando una pesa"
         }
       ]
     },
     {
-      "id": "pretty-derby",
-      "nombre": "Pretty Derby",
-      "categoria": "Anime · Uma Musume",
+      "id": "frieren",
+      "nombre": "Frieren",
+      "categoria": "Anime y Cómic · Frieren",
       "filtros": [
-        "anime",
-        "uma musume",
-        "pretty derby"
+        "anime-comic",
+        "frieren"
       ],
       "precio": null,
       "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
@@ -152,8 +876,741 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-PrettyDerby.jpeg",
-          "alt": "Figura de personaje de Pretty Derby con uniforme rojo sobre base de pasto"
+          "src": "assets/img/productos/anime-comic/frieren.jpeg",
+          "alt": "Figura de Frieren con su báculo"
+        }
+      ]
+    },
+    {
+      "id": "toji-fushiguro",
+      "nombre": "Toji Fushiguro",
+      "categoria": "Anime y Cómic · Jujutsu Kaisen",
+      "filtros": [
+        "anime-comic",
+        "jujutsu kaisen",
+        "toji fushiguro"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/toji-fushiguro.jpeg",
+          "alt": "Figura de Toji Fushiguro sobre una base de asfalto"
+        }
+      ]
+    },
+    {
+      "id": "chopper",
+      "nombre": "Tony Tony Chopper",
+      "categoria": "Anime y Cómic · One Piece",
+      "filtros": [
+        "anime-comic",
+        "one piece",
+        "chopper",
+        "tony tony chopper"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/chopper.jpeg",
+          "alt": "Figura de Chopper sentado sobre una base roja"
+        }
+      ]
+    },
+    {
+      "id": "asuka-langley-piloto",
+      "nombre": "Asuka Langley (traje de piloto)",
+      "categoria": "Anime y Cómic · Evangelion",
+      "filtros": [
+        "anime-comic",
+        "evangelion",
+        "asuka langley (traje de piloto)"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/asuka-langley-piloto.jpeg",
+          "alt": "Figura de Asuka Langley con traje de piloto rojo sobre base negra"
+        }
+      ]
+    },
+    {
+      "id": "caballero-dorado",
+      "nombre": "Caballero Dorado",
+      "categoria": "Anime y Cómic · Saint Seiya",
+      "filtros": [
+        "anime-comic",
+        "saint seiya",
+        "caballeros del zodiaco",
+        "caballero dorado"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/caballero-dorado.jpeg",
+          "alt": "Figura de un caballero dorado con capa azul y los brazos abiertos"
+        }
+      ]
+    },
+    {
+      "id": "chicas-superpoderosas",
+      "nombre": "Las Chicas Superpoderosas",
+      "categoria": "Anime y Cómic · Cartoon Network",
+      "filtros": [
+        "anime-comic",
+        "cartoon network",
+        "comic",
+        "dibujos animados",
+        "las chicas superpoderosas"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/chicas-superpoderosas.jpeg",
+          "alt": "Figuras de Bombón, Burbuja y Bellota"
+        }
+      ]
+    },
+    {
+      "id": "tiara-mujer-maravilla",
+      "nombre": "Tiara de la Mujer Maravilla",
+      "categoria": "Anime y Cómic · DC Cómics",
+      "filtros": [
+        "anime-comic",
+        "dc cómics",
+        "comic",
+        "accesorio",
+        "tiara de la mujer maravilla"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/tiara-mujer-maravilla.jpeg",
+          "alt": "Tiara dorada con piedra roja"
+        }
+      ]
+    },
+    {
+      "id": "diario-tom-riddle",
+      "nombre": "Diario de Tom Riddle",
+      "categoria": "Anime y Cómic · Harry Potter",
+      "filtros": [
+        "anime-comic",
+        "harry potter",
+        "accesorio",
+        "diario de tom riddle"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/diario-tom-riddle.jpeg",
+          "alt": "Réplica del diario de Tom Riddle sobre un soporte con su nombre"
+        }
+      ]
+    },
+    {
+      "id": "maomao-te",
+      "nombre": "Maomao tomando té",
+      "categoria": "Anime y Cómic · Los diarios de la boticaria",
+      "filtros": [
+        "anime-comic",
+        "los diarios de la boticaria",
+        "kusuriya no hitorigoto",
+        "maomao tomando té"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/maomao-te.jpeg",
+          "alt": "Figura chibi de Maomao con orejas de gato tomando té"
+        }
+      ]
+    },
+    {
+      "id": "cetro-lunar",
+      "nombre": "Cetro Lunar",
+      "categoria": "Anime y Cómic · Sailor Moon",
+      "filtros": [
+        "anime-comic",
+        "sailor moon",
+        "accesorio",
+        "cetro lunar"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/cetro-lunar.jpeg",
+          "alt": "Réplica del cetro lunar de Sailor Moon"
+        }
+      ]
+    },
+    {
+      "id": "tio-iroh",
+      "nombre": "Tío Iroh",
+      "categoria": "Anime y Cómic · Avatar: la leyenda de Aang",
+      "filtros": [
+        "anime-comic",
+        "avatar: la leyenda de aang",
+        "avatar",
+        "iroh",
+        "tío iroh"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/tio-iroh.jpeg",
+          "alt": "Figura chibi del tío Iroh tomando té"
+        }
+      ]
+    },
+    {
+      "id": "arale",
+      "nombre": "Arale",
+      "categoria": "Anime y Cómic · Dr. Slump",
+      "filtros": [
+        "anime-comic",
+        "dr. slump",
+        "arale"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/arale.jpeg",
+          "alt": "Figura de Arale con gorra y anteojos"
+        }
+      ]
+    },
+    {
+      "id": "leon",
+      "nombre": "León",
+      "categoria": "Anime y Cómic",
+      "filtros": [
+        "anime-comic",
+        "león"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/anime-comic/leon.jpeg",
+          "alt": "Figura de un león marrón y blanco recostado"
+        }
+      ]
+    },
+    {
+      "id": "tommy-vercetti",
+      "nombre": "Tommy Vercetti",
+      "categoria": "Juegos · GTA Vice City",
+      "filtros": [
+        "juegos",
+        "gta vice city",
+        "gta",
+        "tommy vercetti"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/tommy-vercetti.jpeg",
+          "alt": "Figura de Tommy Vercetti con camisa hawaiana y arma"
+        }
+      ]
+    },
+    {
+      "id": "victor-vance",
+      "nombre": "Victor Vance",
+      "categoria": "Juegos · GTA",
+      "filtros": [
+        "juegos",
+        "gta",
+        "victor vance"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/victor-vance.jpeg",
+          "alt": "Figura de personaje de GTA con camisa celeste y arma"
+        }
+      ]
+    },
+    {
+      "id": "niko-bellic",
+      "nombre": "Niko Bellic",
+      "categoria": "Juegos · GTA IV",
+      "filtros": [
+        "juegos",
+        "gta iv",
+        "gta",
+        "niko bellic"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/niko-bellic.jpeg",
+          "alt": "Figura de Niko Bellic con campera marrón y escopeta"
+        }
+      ]
+    },
+    {
+      "id": "mario",
+      "nombre": "Mario",
+      "categoria": "Juegos · Super Mario",
+      "filtros": [
+        "juegos",
+        "super mario",
+        "nintendo",
+        "mario"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/mario.jpeg",
+          "alt": "Figura de Mario saludando"
+        }
+      ]
+    },
+    {
+      "id": "cj-bmx",
+      "nombre": "CJ en BMX",
+      "categoria": "Juegos · GTA San Andreas",
+      "filtros": [
+        "juegos",
+        "gta san andreas",
+        "gta",
+        "cj en bmx"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/cj-bmx.jpeg",
+          "alt": "Figura de CJ andando en bicicleta BMX"
+        }
+      ]
+    },
+    {
+      "id": "hollow-knight",
+      "nombre": "El Caballero",
+      "categoria": "Juegos · Hollow Knight",
+      "filtros": [
+        "juegos",
+        "hollow knight",
+        "el caballero"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/hollow-knight.jpeg",
+          "alt": "Figura del Caballero de Hollow Knight sobre una base oscura"
+        }
+      ]
+    },
+    {
+      "id": "hornet",
+      "nombre": "Hornet",
+      "categoria": "Juegos · Hollow Knight",
+      "filtros": [
+        "juegos",
+        "hollow knight",
+        "hornet"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/hornet.jpeg",
+          "alt": "Figura de Hornet con capa roja"
+        }
+      ]
+    },
+    {
+      "id": "torre-dados-dragon",
+      "nombre": "Torre de dados con dragón",
+      "categoria": "Juegos · Rol",
+      "filtros": [
+        "juegos",
+        "dados",
+        "rol",
+        "dnd",
+        "torre de dados con dragón"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/torre-dados-dragon.jpeg",
+          "alt": "Torre de dados con forma de castillo y un dragón rojo"
+        }
+      ]
+    },
+    {
+      "id": "earthworm-jim",
+      "nombre": "Earthworm Jim",
+      "categoria": "Juegos · Earthworm Jim",
+      "filtros": [
+        "juegos",
+        "earthworm jim"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/earthworm-jim.jpeg",
+          "alt": "Figura de Earthworm Jim con su traje blanco"
+        }
+      ]
+    },
+    {
+      "id": "kirby",
+      "nombre": "Kirby",
+      "categoria": "Juegos · Kirby",
+      "filtros": [
+        "juegos",
+        "kirby",
+        "nintendo"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/kirby.jpeg",
+          "alt": "Figura de Kirby con un cuchillo"
+        }
+      ]
+    },
+    {
+      "id": "2b",
+      "nombre": "2B",
+      "categoria": "Juegos · NieR: Automata",
+      "filtros": [
+        "juegos",
+        "nier: automata",
+        "nier",
+        "2b"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/2b.jpeg",
+          "alt": "Figura de 2B con su espada"
+        }
+      ]
+    },
+    {
+      "id": "chun-li",
+      "nombre": "Chun-Li",
+      "categoria": "Juegos · Street Fighter",
+      "filtros": [
+        "juegos",
+        "street fighter",
+        "chun-li"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/chun-li.jpeg",
+          "alt": "Figura de Chun-Li con traje azul"
+        }
+      ]
+    },
+    {
+      "id": "mai-shiranui",
+      "nombre": "Mai Shiranui",
+      "categoria": "Juegos · The King of Fighters",
+      "filtros": [
+        "juegos",
+        "the king of fighters",
+        "kof",
+        "mai shiranui"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/mai-shiranui.jpeg",
+          "alt": "Figura de Mai Shiranui con su abanico"
+        }
+      ]
+    },
+    {
+      "id": "jinx",
+      "nombre": "Jinx",
+      "categoria": "Juegos · League of Legends",
+      "filtros": [
+        "juegos",
+        "league of legends",
+        "arcane",
+        "lol",
+        "jinx"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/jinx.jpeg",
+          "alt": "Figura de Jinx con su arma"
+        }
+      ]
+    },
+    {
+      "id": "leon-kennedy",
+      "nombre": "Leon S. Kennedy",
+      "categoria": "Juegos · Resident Evil 4",
+      "filtros": [
+        "juegos",
+        "resident evil 4",
+        "resident evil",
+        "leon s. kennedy"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/leon-kennedy.jpeg",
+          "alt": "Figura de Leon S. Kennedy con campera de cuero"
+        }
+      ]
+    },
+    {
+      "id": "caja-dados-hexagonal",
+      "nombre": "Caja de dados hexagonal",
+      "categoria": "Juegos · Rol",
+      "filtros": [
+        "juegos",
+        "dados",
+        "rol",
+        "dnd",
+        "caja de dados hexagonal"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/caja-dados-hexagonal.jpeg",
+          "alt": "Caja de dados hexagonal dorada con un dragón grabado"
+        }
+      ]
+    },
+    {
+      "id": "espada-fuego",
+      "nombre": "Espada de fuego",
+      "categoria": "Juegos · Réplicas",
+      "filtros": [
+        "juegos",
+        "espada",
+        "replica",
+        "espada de fuego"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/espada-fuego.jpeg",
+          "alt": "Réplica de espada roja con empuñadura dorada"
+        }
+      ]
+    },
+    {
+      "id": "jarra-castillo",
+      "nombre": "Jarra castillo",
+      "categoria": "Juegos · Rol",
+      "filtros": [
+        "juegos",
+        "jarra",
+        "rol",
+        "jarra castillo"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/jarra-castillo.jpeg",
+          "alt": "Jarra con forma de torre de castillo y escudo con grifo"
+        }
+      ]
+    },
+    {
+      "id": "espada-porta-dados",
+      "nombre": "Espada porta dados",
+      "categoria": "Juegos · Rol",
+      "filtros": [
+        "juegos",
+        "dados",
+        "rol",
+        "dnd",
+        "espada porta dados"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/espada-porta-dados.jpeg",
+          "alt": "Espada que guarda un set de dados, con su vaina"
+        }
+      ]
+    },
+    {
+      "id": "jarra-dragon",
+      "nombre": "Jarra dragón",
+      "categoria": "Juegos · Rol",
+      "filtros": [
+        "juegos",
+        "jarra",
+        "rol",
+        "jarra dragón"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/jarra-dragon.jpeg",
+          "alt": "Jarra con forma de dragón de lava"
+        }
+      ]
+    },
+    {
+      "id": "caja-dados",
+      "nombre": "Caja de dados",
+      "categoria": "Juegos · Rol",
+      "filtros": [
+        "juegos",
+        "dados",
+        "rol",
+        "dnd",
+        "caja de dados"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/caja-dados.jpeg",
+          "alt": "Caja de dados roja con símbolo dorado"
+        }
+      ]
+    },
+    {
+      "id": "estuche-dados-dnd",
+      "nombre": "Estuche de dados D&D",
+      "categoria": "Juegos · Dungeons & Dragons",
+      "filtros": [
+        "juegos",
+        "dungeons & dragons",
+        "dados",
+        "rol",
+        "dnd",
+        "estuche de dados d&d"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/estuche-dados-dnd.jpeg",
+          "alt": "Estuche abierto para dados con hoja de personaje impresa"
+        }
+      ]
+    },
+    {
+      "id": "cajas-rana-chocolate",
+      "nombre": "Cajas Rana de Chocolate",
+      "categoria": "Juegos · Harry Potter",
+      "filtros": [
+        "juegos",
+        "harry potter",
+        "cajas",
+        "cajas rana de chocolate"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/juegos/cajas-rana-chocolate.jpeg",
+          "alt": "Cajas azules con forma de pentágono de Rana de Chocolate"
         }
       ]
     },
@@ -164,8 +1621,8 @@
       "filtros": [
         "peliculas",
         "star wars",
-        "anakin",
-        "jedi"
+        "jedi",
+        "anakin skywalker"
       ],
       "precio": null,
       "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
@@ -173,20 +1630,20 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-Anakin.jpeg",
+          "src": "assets/img/productos/peliculas/anakin.jpeg",
           "alt": "Figura de Anakin Skywalker con sable de luz azul"
         }
       ]
     },
     {
-      "id": "superman",
-      "nombre": "Superman",
-      "categoria": "Cómics · DC",
+      "id": "jason-voorhees",
+      "nombre": "Jason Voorhees",
+      "categoria": "Películas · Viernes 13",
       "filtros": [
-        "comics",
-        "dc",
-        "superman",
-        "superheroes"
+        "peliculas",
+        "viernes 13",
+        "terror",
+        "jason voorhees"
       ],
       "precio": null,
       "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
@@ -194,19 +1651,80 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-Superman.jpeg",
-          "alt": "Figura de Superman con capa roja sobre base dorada"
+          "src": "assets/img/productos/peliculas/jason-voorhees.jpeg",
+          "alt": "Figura chibi de Jason Voorhees con su máscara"
+        }
+      ]
+    },
+    {
+      "id": "depredador",
+      "nombre": "Depredador",
+      "categoria": "Películas · Depredador",
+      "filtros": [
+        "peliculas",
+        "depredador",
+        "predator"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/peliculas/depredador.jpeg",
+          "alt": "Figura del Depredador sobre una base con calaveras"
+        }
+      ]
+    },
+    {
+      "id": "pennywise",
+      "nombre": "Pennywise",
+      "categoria": "Películas · It",
+      "filtros": [
+        "peliculas",
+        "it",
+        "terror",
+        "pennywise"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/peliculas/pennywise.jpeg",
+          "alt": "Figura chibi de Pennywise con un globo rojo"
+        }
+      ]
+    },
+    {
+      "id": "jack-skellington",
+      "nombre": "Jack Skellington",
+      "categoria": "Películas · El extraño mundo de Jack",
+      "filtros": [
+        "peliculas",
+        "el extraño mundo de jack",
+        "jack skellington"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/peliculas/jack-skellington.jpeg",
+          "alt": "Figura de Jack Skellington con traje a rayas"
         }
       ]
     },
     {
       "id": "rockera",
       "nombre": "Rockera",
-      "categoria": "Figuras originales",
+      "categoria": "Personalizados",
       "filtros": [
-        "originales",
-        "rockera",
-        "musica"
+        "personalizados",
+        "musica",
+        "rockera"
       ],
       "precio": null,
       "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
@@ -214,8 +1732,295 @@
       "caracteristicas": [],
       "imagenes": [
         {
-          "src": "assets/img/productos/Figura3D-Rockera.jpeg",
+          "src": "assets/img/productos/personalizados/rockera.jpeg",
           "alt": "Figura de una cantante rockera con micrófono y parlante"
+        }
+      ]
+    },
+    {
+      "id": "chica-demonio",
+      "nombre": "Chica demonio",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "chica demonio"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/chica-demonio.jpeg",
+          "alt": "Figura chibi de una chica demonio de pelo rojo"
+        }
+      ]
+    },
+    {
+      "id": "fisicoculturista",
+      "nombre": "Fisicoculturista",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "gym",
+        "caricatura",
+        "fisicoculturista"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/fisicoculturista.jpeg",
+          "alt": "Figura caricatura de un fisicoculturista posando"
+        }
+      ]
+    },
+    {
+      "id": "jigglypuff-gym",
+      "nombre": "Jigglypuff gym",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "pokemon",
+        "gym",
+        "jigglypuff gym"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/jigglypuff-gym.jpeg",
+          "alt": "Figura de Jigglypuff musculoso con una pesa"
+        }
+      ]
+    },
+    {
+      "id": "banda-chibi",
+      "nombre": "Banda en versión chibi",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "musica",
+        "caricatura",
+        "banda en versión chibi"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/banda-chibi.jpeg",
+          "alt": "Tres figuras chibi de músicos con sus guitarras"
+        }
+      ]
+    },
+    {
+      "id": "auto-rojo",
+      "nombre": "Auto clásico rojo",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "auto",
+        "auto clásico rojo"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/auto-rojo.jpeg",
+          "alt": "Réplica de un auto clásico rojo"
+        }
+      ]
+    },
+    {
+      "id": "espada-roja",
+      "nombre": "Espada roja",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "espada",
+        "espada roja"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/espada-roja.jpeg",
+          "alt": "Espada roja y negra con empuñadura dorada"
+        }
+      ]
+    },
+    {
+      "id": "minotauro-gym",
+      "nombre": "Minotauro gym",
+      "categoria": "Personalizados",
+      "filtros": [
+        "personalizados",
+        "gym",
+        "minotauro gym"
+      ],
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/personalizados/minotauro-gym.jpeg",
+          "alt": "Figura de un minotauro levantando una pesa"
+        }
+      ]
+    },
+    {
+      "id": "restauracion-tommy-vercetti",
+      "nombre": "Tommy Vercetti",
+      "categoria": "Restauraciones",
+      "filtros": [
+        "restauraciones",
+        "gta",
+        "tommy vercetti"
+      ],
+      "etiqueta": {
+        "texto": "Antes y después",
+        "color": "blanco"
+      },
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/restauraciones/restauracion-tommy-vercetti.jpeg",
+          "alt": "Antes y después de la restauración de una figura de Tommy Vercetti"
+        }
+      ]
+    },
+    {
+      "id": "restauracion-sung-jin-woo",
+      "nombre": "Sung Jin-Woo",
+      "categoria": "Restauraciones",
+      "filtros": [
+        "restauraciones",
+        "solo leveling",
+        "sung jin-woo"
+      ],
+      "etiqueta": {
+        "texto": "Antes y después",
+        "color": "blanco"
+      },
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/restauraciones/restauracion-sung-jin-woo.jpeg",
+          "alt": "Antes y después de la restauración de una figura de Sung Jin-Woo"
+        }
+      ]
+    },
+    {
+      "id": "restauracion-ken-kaneki",
+      "nombre": "Ken Kaneki",
+      "categoria": "Restauraciones",
+      "filtros": [
+        "restauraciones",
+        "tokyo ghoul",
+        "ken kaneki"
+      ],
+      "etiqueta": {
+        "texto": "Antes y después",
+        "color": "blanco"
+      },
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/restauraciones/restauracion-ken-kaneki.jpeg",
+          "alt": "Antes y después de la restauración de una figura de Ken Kaneki"
+        }
+      ]
+    },
+    {
+      "id": "restauracion-sebastian-michaelis",
+      "nombre": "Sebastian Michaelis",
+      "categoria": "Restauraciones",
+      "filtros": [
+        "restauraciones",
+        "black butler",
+        "kuroshitsuji",
+        "sebastian michaelis"
+      ],
+      "etiqueta": {
+        "texto": "Antes y después",
+        "color": "blanco"
+      },
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/restauraciones/restauracion-sebastian-michaelis.jpeg",
+          "alt": "Antes y después de la restauración de una figura de Sebastian Michaelis"
+        }
+      ]
+    },
+    {
+      "id": "restauracion-nezuko",
+      "nombre": "Nezuko Kamado",
+      "categoria": "Restauraciones",
+      "filtros": [
+        "restauraciones",
+        "kimetsu no yaiba",
+        "demon slayer",
+        "nezuko kamado"
+      ],
+      "etiqueta": {
+        "texto": "Antes y después",
+        "color": "blanco"
+      },
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/restauraciones/restauracion-nezuko.jpeg",
+          "alt": "Antes y después de la restauración de una figura de Nezuko Kamado"
+        }
+      ]
+    },
+    {
+      "id": "restauracion-demonio",
+      "nombre": "Figura de demonio",
+      "categoria": "Restauraciones",
+      "filtros": [
+        "restauraciones",
+        "figura de demonio"
+      ],
+      "etiqueta": {
+        "texto": "Antes y después",
+        "color": "blanco"
+      },
+      "precio": null,
+      "resumen": "[PENDIENTE] Resumen corto de la tarjeta",
+      "descripcion": "[PENDIENTE] Descripción del producto.",
+      "caracteristicas": [],
+      "imagenes": [
+        {
+          "src": "assets/img/productos/restauraciones/restauracion-demonio.jpeg",
+          "alt": "Antes y después de la restauración de una figura de un demonio de pelo blanco"
         }
       ]
     }

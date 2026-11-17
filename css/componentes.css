@@ -302,10 +302,10 @@
 }
 
 
-/* ---------- icono-red (WhatsApp, Instagram, Facebook, TikTok) ----------
-   Dibujos en assets/iconos/redes.svg; toman el color del texto */
+/* ---------- icono-red (logos de WhatsApp e Instagram) ----------
+   Archivos en assets/iconos/, con los colores de cada marca */
 .icono-red {
   flex-shrink: 0;
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.6em;
+  height: 1.6em;
 }

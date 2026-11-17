@@ -171,7 +171,15 @@
   }
 }
 
-/* Escritorio: mosaico. Anime y Cómic ocupan dos filas; las otras dos se apilan */
+/* Tablet: con 5 tarjetas, Anime y Cómic va arriba ocupando las dos columnas */
+@media (min-width: 640px) and (max-width: 959px) {
+  .cat-card--grande {
+    grid-column: span 2;
+    min-height: 360px;
+  }
+}
+
+/* Escritorio: mosaico. Anime y Cómic ocupa dos filas; las otras cuatro van en 2 × 2 */
 @media (min-width: 960px) {
   .categorias__grid {
     grid-template-columns: 2.3fr 1fr 1fr;
@@ -232,6 +240,10 @@
   .cat-card--alta .cat-card__flecha,
   .cat-card--chica .cat-card__flecha {
     display: none;
+  }
+
+  .cat-card--chica .cat-card__info strong {
+    font-size: 1.25rem;
   }
 }
 /* Celular: la tarjeta es baja, así que el collage muestra solo 2 fotos lado a lado */

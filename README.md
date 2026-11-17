@@ -70,55 +70,55 @@ Cada producto tiene esta forma:
 
 ```json
 {
-  "id": "dragon-ancestral",
-  "nombre": "Dragón Ancestral",
-  "categoria": "Dragones · Resina",
-  "filtros": ["dragones"],
+  "id": "goku-ssj",
+  "nombre": "Goku Super Saiyajin",
+  "categoria": "Anime y Cómic · Dragon Ball",
+  "filtros": ["anime-comic", "dragon ball", "goku", "saiyajin"],
   "etiqueta": { "texto": "Más vendido", "color": "rojo" },
+  "destacado": true,
   "precio": 38900,
-  "resumen": "Alas desplegables · 28 cm · Base incluida",
-  "descripcion": "Alas desplegables y base incluida. Acabado listo para pintar.",
-  "caracteristicas": ["28 cm", "Resina", "0,05 mm"],
+  "resumen": "Texto corto de la tarjeta",
+  "descripcion": "Texto de la ficha del producto.",
+  "caracteristicas": ["30 cm", "Filamento PLA"],
   "imagenes": [
-    { "src": "assets/img/productos/dragon-ancestral-1.jpg", "alt": "Descripción de la foto" }
+    { "src": "assets/img/productos/anime-comic/goku-ssj.jpeg", "alt": "Descripción de la foto" }
   ]
 }
 ```
 
-- `id`: identificador sin espacios ni tildes. Se usa en el enlace a la ficha (`producto.html?id=dragon-ancestral`).
-- `filtros`: palabras con las que se encuentra el producto. Definen en qué **categoría** aparece (ver abajo) y las usa el buscador (serie, personaje…).
+- `id`: identificador sin espacios ni tildes. Se usa en el enlace a la ficha (`producto.html?id=goku-ssj`).
+- `categoria`: texto que se ve arriba del nombre (sección · serie).
+- `filtros`: el **primero** es la sección (la carpeta de la foto); los demás son palabras con las que se encuentra en el buscador (serie, personaje…).
 - `etiqueta`: cartel sobre la foto; `color` puede ser `rojo` o `blanco`. Se puede borrar si el producto no lleva.
 - `precio`: número sin puntos ni signo; la página lo muestra como `$ 38.900`. Con `null` muestra "Consultar precio".
 - `destacado`: `true` para que aparezca en "Piezas destacadas" de la landing (se muestran hasta 4). Todos los productos se ven en `productos.html`.
 - `resumen`: línea corta de la tarjeta. `descripcion`: texto de la ficha.
-- `imagenes`: la primera es la de la tarjeta; todas se ven en la ficha. Para cambiarlas, poner los archivos en `assets/img/productos/` y actualizar `src`. `alt` describe la foto para quienes no la ven.
+- `imagenes`: la primera es la de la tarjeta; todas se ven en la ficha. `alt` describe la foto para quienes no la ven.
 
 Los productos aparecen en el catálogo en el mismo orden que en el JSON. El buscador de `productos.html` busca en nombre, categoría, resumen y todos los `filtros`.
 
-### Categorías del catálogo
+### Secciones del catálogo
 
-Las tarjetas de "Elegí tu universo" y los botones de `productos.html` son cuatro categorías. Un producto entra en una categoría si **alguno** de sus `filtros` es una de estas palabras (sin importar tildes ni mayúsculas):
+Cada sección es una carpeta dentro de `assets/img/productos/`:
 
-| Categoría | Palabras en `filtros` |
-|-----------|-----------------------|
-| Anime | `anime` |
-| Cómic | `comic`, `comics` |
-| Personalizables | `personalizable`, `personalizables` |
-| Creaciones únicas | `creaciones unicas`, `creacion unica` |
+| Sección | Carpeta | Palabras en `filtros` que también la activan |
+|---------|---------|----------------------------------------------|
+| Anime y Cómic | `anime-comic/` | `anime`, `comic`, `comics` |
+| Juegos | `juegos/` | `juego`, `videojuegos` |
+| Personalizados | `personalizados/` | `personalizado`, `personalizables` |
+| Películas | `peliculas/` | `pelicula` |
+| Restauraciones | `restauraciones/` | `restauracion` |
 
-Un producto puede estar en varias, por ejemplo `"filtros": ["anime", "personalizables", "goku"]`. Cada tarjeta de categoría arma sola su collage con las fotos de sus productos (los `destacado` primero) y muestra cuántos hay; sin productos dice "Próximamente". Las categorías se cambian en `js/comun.js` (`CATEGORIAS`).
-
-Los productos que no entran en ninguna categoría (hoy Anakin, con `peliculas`, y Rockera, con `originales`) tienen su propio botón en `productos.html`, armado con el primer valor de sus `filtros`.
+Las tarjetas de "Elegí tu universo" y los botones de `productos.html` muestran estas cinco secciones. Cada tarjeta arma sola su collage con las fotos de sus productos (los `destacado` primero) y muestra cuántos hay; si una sección queda vacía dice "Próximamente". Las secciones se cambian en `js/comun.js` (`CATEGORIAS`).
 
 ### Sumar productos nuevos
 
-Copiar la foto en `assets/img/productos/` y abrir `iniciar.bat` (o `actualizar-productos.bat`). El script `scripts/actualizar_productos.py`:
+Copiar la foto en la carpeta de su sección (por ejemplo `assets/img/productos/juegos/`) y abrir `iniciar.bat` (o `actualizar-productos.bat`). El script `scripts/actualizar_productos.py`:
 
-- agrega al JSON un producto por cada foto nueva, con los textos en `[PENDIENTE]` para completar;
+- agrega al JSON un producto por cada foto nueva, en la sección de su carpeta, con los textos en `[PENDIENTE]` para completar (si la foto tiene un nombre como `mario.jpeg`, lo usa como nombre del producto);
 - no toca los productos que ya están;
-- corrige rutas mal escritas (por ejemplo, sin la extensión `.jpeg`);
+- corrige rutas mal escritas (por ejemplo, sin la extensión `.jpeg`); si una foto se movió a otra carpeta, el producto pasa a esa sección;
 - quita del JSON los productos cuya foto se borró.
-
 ## Tecnologías y stack
 
 HTML, CSS y JavaScript puro, sin dependencias ni instalación. Un HTML no puede incluir otros por sí solo, así que `js/incluir.js` (un script corto) los une al abrir la página. Las fuentes se cargan desde Google Fonts.

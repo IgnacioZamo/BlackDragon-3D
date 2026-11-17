@@ -1,7 +1,7 @@
 /* Productos: muestra todo data/productos.json con buscador y filtros.
    - Botones de filtro: primero las 4 categorías del catálogo (BD.CATEGORIAS en js/comun.js),
      siempre, aunque todavía no tengan productos. Después, los grupos del JSON que no entran
-     en ninguna categoría (primer valor de "filtros", por ejemplo "peliculas").
+     en ninguna categoría (primer valor de "filtros"), si los hubiera.
    - Buscador: busca en nombre, categoría, resumen y todos los "filtros".
    - Acepta ?filtro=anime y ?q=goku en la URL (los usan los enlaces de la landing). */
 (function () {
